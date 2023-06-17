@@ -1,34 +1,52 @@
 <!DOCTYPE html>
-<html lang="ru">
-
-<head>
+<html lang="ru" class="font-opacity">
+  <head>
     {{> head }}
-</head>
+  </head>
 
-<body>
+  <body>
     {{> sprite }}
 
     <div class="page">
-        
-        <!-- Header -->
+      <!-- Header -->
 
-        {{> header }}
+      {{> header }}
 
-        <!-- Main content -->
-        <main>
+      <!-- Main content -->
+      <main>
+        {{> body }}
 
-            {{> body }}
+        {{> callback}}
+      </main>
 
-        </main>
-
-        <!-- Footer -->
-        {{> footer }}
-
+      <!-- Footer -->
+      {{> footer }}
     </div>
 
+    <!-- Consult modal -->
+    {{> consult-modal}}
+
+    <!-- Product in cart modal -->
+    {{> addProduct}}
+
+    <!-- Feedback modal -->
+    {{> feedback}}
+
+
     <!-- JS -->
+    <script>
+      if (document && document.fonts) {
+        setTimeout(function () {
+          document.fonts.ready.then(function () {
+            document.documentElement.classList.remove("font-opacity");
+          });
+        }, 0);
+      } else {
+        document.documentElement.classList.remove("font-opacity");
+      }
+    </script>
     <script src="assets/js/vendor.js"></script>
     <script src="assets/js/app.js"></script>
-</body>
-
+    <script src="assets/js/temp.js"></script>
+  </body>
 </html>

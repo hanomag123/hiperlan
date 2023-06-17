@@ -1,17 +1,88 @@
 .menu {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  transform: translateX(100%);
-  height: 100%;
-  width: 30%;
-  background-color: lightblue;
-  transition: all 1s ease;
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   @include breakpoint($xl-bp) {
-    display: block;
-    height: 100vh;
+    position: fixed;
+    top: 7.8rem;
+    right: 0;
+    transform: translate3d(100%, 0, 0);
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+    transition: transform .3s;
+    will-change: transform;
+    background-color: var(--white);
+    height: calc(100% - 7.8rem);
+    overflow: auto;
+    z-index: 10;
+    gap: 3rem;
+  }
+
+  .header-nav {
+    display: none;
+    @include breakpoint($xl-bp) {
+      display: block;
+      ul {
+        & > li {
+          &.active {
+            &::before {
+              content: unset;
+            }
+          }
+        }
+        gap: 3rem;
+        a {
+          min-width: 20rem;
+          text-align: end;
+        }
+      }
+    }
+  }
+}
+
+.menu-list {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  @include breakpoint($xl-bp) {
+    flex-direction: column;
+    padding-top: 3rem;
+    border-top: 0.2rem solid var(--lgrey);
+    width: 100%;
+    align-items: flex-end;
+  }
+  button,
+  a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    &:hover {
+      color: var(--blue);
+      svg {
+        stroke: var(--blue);
+      }
+    }
+    svg {
+      width: 1.6rem;
+      height: 1.7rem;
+      stroke: var(--black);
+      fill: transparent;
+    }
+  }
+
+  &.--blue {
+    font-weight: 600;
+
+    a {
+      color: var(--blue);
+      &:hover {
+        color: var(--black);
+      }
+    }
   }
 }
 
@@ -19,29 +90,16 @@
   transform: translateX(0);
 }
 
-// .menu-button {
-//   width: 30px;
-//   height: 30px;
-
-//   background-color: red;
-
-//   position: absolute;
-
-//   right: 0;
-//   top: 0;
-
-//   z-index: 3;
-// }
-
 .menu-button {
-  width: 4rem;
-  height: 3.4rem;
+  width: 3rem;
+  height: 3rem;
   background-color: transparent;
   border: 0;
 
-  z-index: 4;
+  z-index: 10;
   display: none;
   position: relative;
+  margin-left: auto;
   .burger-button-close {
     #first-line-burger,
     #second-line-burger,
@@ -61,6 +119,9 @@
     #first-line-burger {
         top: 0%;
     }
+    #second-line-burger {
+      top: 47%;
+    }
     #third-line-burger {
         top: unset;
         bottom: 0%;
@@ -68,12 +129,10 @@
   }
   @include breakpoint($xl-bp) {
     display: block;
-    margin-left: 3rem;
   }
   @include breakpoint($sm-bp) {
-    margin-left: 0;
     width: 2rem;
-    height: 2rem;
+    height: 1.8rem;
     margin-right: 0.5rem;
   }
 }
@@ -81,12 +140,17 @@
 .header__menu-button--active,
 .menu-button--active {
   .burger-button-close {
+    #first-line-burger,
+    #second-line-burger,
+    #third-line-burger {
+      height: 0.1rem;
+    }
     #first-line-burger {
       top: 50%;
       transform: translateX(-50%) rotate(45deg);
     }
     #second-line-burger {
-      transform: translateX(100%);
+      transform: translate3d(0, 0, 0);
       opacity: 0;
     }
     #third-line-burger {
@@ -98,13 +162,12 @@
 }
 
 
-.menu-button--active {
-
-}
-
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  z-index: 3;
+  background: rgba(26, 29, 30, 0.4);
 }

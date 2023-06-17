@@ -104,12 +104,12 @@ function css(cb) {
       })
     )
     // .pipe(postcss([tailwindcss("./tailwind.config.js")]))
-    .pipe(
-      autoprefixer({
-        cascade: true,
-      })
-    )
-    .pipe(cssbeautify())
+    // .pipe(
+    //   autoprefixer({
+    //     cascade: true,
+    //   })
+    // )
+    // .pipe(cssbeautify())
     // .pipe(
     //   cssnano({
     //     zindex: false,
@@ -118,7 +118,7 @@ function css(cb) {
     //     },
     //   })
     // )
-    .pipe(removeComments())
+    // .pipe(removeComments())
     // .pipe(dest(path.build.css))
     // .pipe(
     //   rename({

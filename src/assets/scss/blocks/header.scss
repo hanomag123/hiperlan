@@ -1,16 +1,598 @@
 .header {
-  position: fixed;
+  position: sticky;
   width: 100%;
   transition: transform .3s;
   will-change: transform;
   top: 0;
   left: 0;
   z-index: 20;
+  background-color: var(--white);
 
   @include breakpoint($xl-bp) {
+    will-change: unset;
+    height: var(--headerHmob);
+
+    padding: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @include breakpoint($sm-bp) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  & > .header__logo {
+    display: none;
+    @include breakpoint($xl-bp) {
+      display: block;
+    }
+  }
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 2rem rgba(26, 29, 30, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 3;
+    @include breakpoint($xl-bp) {
+      background-color: var(--white);
+    }
+  }
+
+}
+
+
+
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  @include breakpoint($xl-bp) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--white);
+    width: 100%;
+    height: var(--botHeaderH);
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 17.1rem repeat(3, 3.2rem);
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+}
+
+.header-nav {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  letter-spacing: 0.02em;
+  @include breakpoint($xl-bp) {
+    display: none;
+  }
+  @include breakpoint($sm-bp) {
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+  }
+  a {
+    &:hover {
+      color: var(--blue);
+    }
+  }
+  ul {
+    display: flex;
+    gap: 4rem;
+    @include breakpoint($xl-bp) {
+      flex-direction: column;
+    }
+    li {
+      position: relative;
+    }
+
+    .active {
+      color: var(--blue);
+
+      &::before {
+        content: '';
+        width: 100%;
+        height: 0.2rem;
+        background-color: var(--blue);
+        border-radius: 0.2rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    a {
+      display: block;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      @include breakpoint($xl-bp) {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
   }
 }
 
-.out {
-  transform: translate3d(0, calc(-100% - 1rem), 0);
+.header__logo {
+  width: 34rem;
+  height: 6.5rem;
+  @include breakpoint($xl-bp) {
+    width: 20rem;
+    height: 3.8rem;
+    display: none;
+    z-index: 5;
+  }
 }
+.header--active {
+  transform: translate3d(0, calc(-100% + 17rem), 0);
+  @include breakpoint($xl-bp) {
+    transform: unset;
+  }
+}
+.out {
+  transform: translate3d(0, calc(-100%), 0);
+  @include breakpoint($xl-bp) {
+    transform: unset;
+  }
+}
+
+.search-wrapper {
+  width: 100%;
+  max-width: 107.6rem;
+  position: relative;
+  margin-left: 4rem;
+  height: min-content;
+  @include breakpoint($xl-bp) {
+    margin-left: 0;
+    align-self: center;
+  }
+}
+
+.search-toggle {
+  display: none;
+  width: 3.2rem;
+  height: 3.2rem;
+  @include breakpoint($xl-bp) {
+    display: block;
+  }
+  svg {
+    fill: transparent;
+    stroke: var(--black);
+  }
+
+  &.active {
+    & + .search-toggle-wrapper {
+      display: block;
+      animation: fadeEffect .3s;
+    }
+  }
+
+}
+
+.search-button-close {
+  display: none;
+  @include breakpoint($xl-bp) {
+    width: 3.2rem;
+    height: 3.2rem;
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    svg {
+      stroke: var(--black);
+    }
+  }
+}
+
+.search-toggle-wrapper {
+
+  @include breakpoint($xl-bp) {
+    display: none;
+    position: fixed;
+    top: var(--headerHmob);
+    left: 0;
+    height: calc(100% - var(--headerHmob));
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--white);
+    z-index: 2;
+  }
+}
+
+.search-form {
+  position: relative;
+}
+
+.search-input {
+  padding: 1.5rem 5.2rem 1.2rem 1.5rem;
+  @include breakpoint($xl-bp) {
+    font-size: 1.8rem;
+    line-height: 140%;
+    padding-right: 8.2rem;
+  }
+}
+
+.search-button-submit {
+  width: 3.2rem;
+  height: 3.2rem;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  @include breakpoint($xl-bp) {
+    right: 5.2rem;
+  }
+  svg {
+    fill: transparent;
+    stroke: var(--black);
+  }
+
+  &:hover {
+    svg {
+      stroke: var(--blue);
+    }
+  }
+}
+
+.favorite {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: block;
+  position: relative;
+  margin-top: 1rem;
+  &::before {
+    content: attr(data-number);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: var(--blue);
+    border-radius: 100%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:hover {
+    svg {
+      stroke: var(--blue);
+    }
+  }
+
+  svg {
+    fill: transparent;
+    stroke: var(--black);
+  }
+
+  &.fav {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+  &.cart {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+}
+.header-catalog {
+  @include breakpoint($xl-bp) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+}
+.header-catalog-button {
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  /* identical to box height */
+
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  background-color: var(--blue);
+  padding: 1.4rem 2.8rem;
+  color: var(--white);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 17.1rem;
+  @media (hover:hover) and (pointer:fine) {
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
+  .dots {
+    width: 1.6rem;
+    height: 1.6rem;
+    position: relative;
+
+    .dots-1,
+    .dots-2,
+    .dots-3,
+    .dots-4 {
+      position: absolute;
+      display: block;
+      width: 0.4rem;
+      height: 0.4rem;
+      background-color: var(--white);
+      border-radius: 0.1rem;
+      top: 50%;
+      left: 50%;
+      transition: transform .3s;
+    }
+
+    .dots-1 {
+      transform: translate3d(calc(-50% + 0.4rem), calc(-50% + 0.4rem), 0);
+    }
+
+    .dots-2 {
+      transform: translate3d(calc(-50% - 0.4rem), calc(-50% - 0.4rem), 0);
+    }
+
+    .dots-3 {
+      transform: translate3d(calc(-50% + 0.4rem), calc(-50% - 0.4rem), 0);
+    }
+
+    .dots-4 {
+      transform: translate3d(calc(-50% - 0.4rem), calc(-50% + 0.4rem), 0);
+    }
+  }
+
+  &.active {
+
+    .dots-1,
+    .dots-2,
+    .dots-3,
+    .dots-4 {
+      width: 1.8rem;
+      border-radius: 0.1rem;
+      height: 0.2rem;
+    }
+
+    .dots-1,
+    .dots-2 {
+      transform: translate3d(-50%, -50%, 0) rotate(45deg);
+    }
+
+    .dots-3,
+    .dots-4 {
+      transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+    }
+
+    & + .header-catalog-block {
+      opacity: 1;
+      pointer-events: all;
+      visibility: visible;
+    }
+  }
+}
+
+.header-catalog-block {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: calc(100vh - 100%);
+  display: grid;
+  grid-template-columns: 52rem 1fr;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity .3s;
+  will-change: opacity;
+  overflow: hidden;
+  background-color: var(--white);
+  width: 100%;
+  @include breakpoint($xl-bp) {
+    position: fixed;
+    top: var(--headerHmob);
+    left: 0;
+    height: calc(100% - var(--headerHmob) - 5.2rem);
+    grid-template-columns: 1fr;
+
+  }
+}
+
+.header-catalog-item {
+  .page-catalog-btn {
+    transition: color .3s;
+    @include breakpoint($xl-bp) {
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.page-catalog-btn {
+  padding: 1rem;
+  width: 100%;
+  text-align: start;
+  font-weight: 500;
+  @include breakpoint($xl-bp) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    gap: 1rem;
+  }
+  svg {
+    display: none;
+    @include breakpoint($xl-bp) {
+      width: 1.6rem;
+      height: 1.7rem;
+      display: block;
+      fill: transparent;
+      stroke: var(--black);
+      transform: rotate(180deg);
+    }
+  }
+  @include breakpoint($xl-bp) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &.active {
+    color: var(--blue);
+    svg {
+      stroke: var(--blue);
+      transform: rotate(0);
+    }
+
+    & + .header-catalog-wrapper {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover { color: var(--blue); }
+  }
+
+  &+.header-catalog-wrapper {
+    display: none;
+    @include breakpoint($xl-bp) {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .3s;
+    }
+  }
+}
+
+.header-catalog-wrapper {
+  & > ul {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    & > li {
+      & > a {
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 110%;
+        /* identical to box height, or 22px */
+        
+        text-transform: uppercase;
+        
+        /* 1 */
+        
+        color: var(--black);
+      }
+
+      & > ul {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.3rem;
+        line-height: 140%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+.header-catalog-container {
+  padding: 4rem;
+  padding-left: 12rem;
+  /* 2 */
+
+  background: var(--white);
+  /* 1 */
+
+  box-shadow: 0px 0px 2rem rgba(26, 29, 30, 0.1);
+  border-radius: 1rem;
+  height: 100%;
+  overflow: auto;
+  @include breakpoint($xl-bp) {
+    padding: 4rem;
+    box-shadow: unset;
+  }
+  @include breakpoint($sm-bp) {
+    padding: 4rem 2rem;
+  }
+}
+
+.header-catalog-content {
+  padding: 4rem;
+  padding-right: 14rem;
+  overflow: auto;
+  @include breakpoint($xl-bp) {
+    display: none;
+  }
+  a {
+    &:hover {
+      color: var(--blue)
+    }
+  }
+  &>ul {
+    animation: fadeEffect .7s;
+
+    columns: 3;
+    column-gap: 4rem;
+
+    &>li {
+      margin-top: 4rem;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &>a {
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2.8rem;
+        line-height: 110%;
+
+        text-transform: uppercase;
+
+        color: var(--black);
+
+      }
+
+      & > ul {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+    }
+  }
+}
+
+@keyframes fadeEffect {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+

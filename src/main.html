@@ -3,4 +3,1339 @@ layout: default
 title: Главная
 ---
 
-<div class="main"></div>
+<div id="canvas"></div>
+
+<section class="main container">
+  <h1 class="main-title">
+    <span>HIPER</span>
+
+    <span class="text-blue">LAN</span>
+  </h1>
+
+  <ul class="main-list mt-40">
+    <li class="main-item">
+      <h2 class="h3">Заказы с удобством</h2>
+
+      <div class="main-desc">
+        Наши клиенты могут совершать заказы в любой удобной им системе –
+        по телефону,
+        <br class="mobile-hidden">
+        e-mail, skype, в системе b2b или на сайте – в режиме
+        24/7.
+      </div>
+    </li>
+
+    <li class="main-item">
+      <h2 class="h3">Товар всегда в наличии</h2>
+
+      <div class="main-desc">
+        Крупная линейка товара в сегменте рынка СКС. Большой склад в России
+        позволит реализовать проекты любого масштаба.
+      </div>
+    </li>
+
+    <li class="main-item">
+      <h2 class="h3">Быстрое получение</h2>
+
+      <div class="main-desc">
+        Склад в шаговой доступности от метро. Предварительная сборка заказа
+        за сутки – без живой очереди, отсутствие ошибок в комплектации.
+      </div>
+    </li>
+  </ul>
+</section>
+
+{{> catalog}}
+
+{{> callback}}
+
+<section class="news mt-200">
+  <div class="news-top container">
+    <h2>Новинки</h2>
+
+    <div class="arrows">
+      <button class="prev arrows-button"><svg>
+          <use href='#arrowL'></use>
+        </svg></button>
+      <div class="swiper-pagination"></div>
+      <button class="next arrows-button"><svg>
+          <use href='#arrowR'></use>
+        </svg></button>
+    </div>
+  </div>
+
+  <div class="swiper-container">
+    <div class="swiper news-swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label">new</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label">new</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label">new</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label">new</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label">new</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label">new</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label">new</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label">new</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label">new</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label">new</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label">new</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label">new</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="news mt-160">
+  <div class="news-top container">
+    <h2>Популярные</h2>
+
+    <div class="arrows">
+      <button class="prev arrows-button"><svg>
+          <use href='#arrowL'></use>
+        </svg></button>
+      <div class="swiper-pagination"></div>
+      <button class="next arrows-button"><svg>
+          <use href='#arrowR'></use>
+        </svg></button>
+    </div>
+  </div>
+
+  <div class="swiper-container">
+    <div class="swiper news-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label --orange">ХИТ</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label --orange">ХИТ</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label --orange">ХИТ</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg> 
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label --orange">ХИТ</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label --orange">ХИТ</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label --orange">ХИТ</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label --orange">ХИТ</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label --orange">ХИТ</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label --orange">ХИТ</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label --orange">ХИТ</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label --orange">ХИТ</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper-slide store-item">
+          <div class="store-top justify-between">
+            <div class="store-label --orange">ХИТ</div>
+            <div class="store-number text-grey">52601</div>
+          </div>
+
+          <a href="#" class="img-contain store-img">
+            <img src="./assets/images/store/store-1.jpg" alt="store">
+          </a>
+
+          <div class="store-text-1 text-grey mt-20">
+            SHE-18IEC-6BIEC-3V-3PVR
+          </div>
+
+          <a href="#" class="store-text-2 h4">
+            Hyperline Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+          </a>
+
+          <div class="store-text-3 mt-5">
+            + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+            (ДхШхВ), корпус алюминий, черный
+          </div>
+
+          <ul class="store-sublist mt-20">
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">Стоимость (шт.)</div>
+              <div class="store-price font-semibold">750₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 25 000₽</div>
+              <div class="store-price font-semibold">590₽</div>
+            </li>
+            <li class="store-sublist-item justify-between">
+              <div class="store-sublist-title text-grey">от 100 000₽</div>
+              <div class="store-price font-semibold">350₽</div>
+            </li>
+          </ul>
+
+          <div class="store-buttons-wrapper">
+            <form class="store-buttons">
+              <button type="submit" data-modal="#addProduct" class="store-button page-button"><svg>
+                  <use href='#cartIcon2'></use>
+                </svg>в корзину</button>
+              <button type="submit" class="store-favor page-button-white"><svg>
+                  <use href='#favoriteIcon'></use>
+                </svg></button>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="main-about container mt-160">
+  <div class="main-about-block">
+    <h2>О компании</h2>
+
+    <ul class="custom-list mt-80">
+      <li>Производим, продаем и поставляем высококачественное сетевое оборудование</li>
+      <li>Сотрудничаем с лидерами рынка сетевых технологий</li>
+      <li>Решаем задачи любой сложности в области СКС</li>
+      <li>Консультируем и помогаем определиться с выбором сетевого оборудования</li>
+    </ul>
+
+    <a href="#" class="page-button mt-80">Подробнее</a>
+  </div>
+  <div id="particlesjs"></div>
+</section>
+
+<section class="main-brands mt-200 container">
+  <div>
+    <h2>Работаем с брендами</h2>
+    <div class="mt-40">
+      <p>
+        Гарантией качества наших товаров и услуг является прямое сотрудничество с лидерами рынка сетевых технологий:
+        ЦМО, ABB, APC, ATEN, Allied Telesis, 3M, Fluke, D-Link, Defender, Panduit, Nexans, Legrand, DKC/ДКС, Hyperline,
+        CSL, Cisco, Teldor и многими другими.
+      </p>
+
+      <p>Мы никогда не продаём низкокачественных подделок!</p>
+    </div>
+  </div>
+
+
+  <ul class="main-brands-list">
+    <li class="page-block"><a href="#"><img src="./assets/images/brand/brand-1.jpg" alt="brand"></a></li>
+    <li class="page-block"><a href="#"><img src="./assets/images/brand/brand-2.jpg" alt="brand"></a></li>
+    <li class="page-block"><a href="#"><img src="./assets/images/brand/brand-3.jpg" alt="brand"></a></li>
+    <li class="page-block"><a href="#"><img src="./assets/images/brand/brand-4.jpg" alt="brand"></a></li>
+    <li class="page-block"><a href="#"><img src="./assets/images/brand/brand-5.jpg" alt="brand"></a></li>
+    <li class="page-block"><a href="#"><img src="./assets/images/brand/brand-6.jpg" alt="brand"></a></li>
+  </ul>
+
+  <a href="#" class="page-button main-brands-button">Все бренды</a>
+</section>
+

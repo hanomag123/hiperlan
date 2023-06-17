@@ -1,0 +1,277 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Exo 2', sans-serif;
+  transition: color .3s;
+}
+
+h2,
+.h2 {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.8rem;
+  line-height: 110%;
+  /* identical to box height, or 53px */
+
+  text-transform: uppercase;
+  @include breakpoint($xl-bp) {
+    font-size: 2.8rem;
+  }
+}
+
+h3,
+.h3 {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.8rem;
+  line-height: 110%;
+  /* identical to box height, or 31px */
+
+  text-transform: uppercase;
+  @include breakpoint($xl-bp) {
+    font-size: 2rem;
+  }
+}
+
+h4,
+.h4 {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  /* identical to box height */
+
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+}
+
+h5,
+.h5 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  @include breakpoint($sm-bp) {
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+  }
+}
+
+button,
+a {
+  transition: color .3s;
+}
+
+.img-contain {
+  display: block;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.img-cover {
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.page-input {
+  background: var(--white);
+  border: 0.1rem solid var(--lgrey);
+  border-radius: 1rem;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 140%;
+  padding: 1.4rem 1.4rem 1.3rem;
+  color: var(--black);
+  transition: border-color .3s;
+  width: 100%;
+  height: 5.2rem;
+  @include breakpoint($sm-bp) {
+    font-size: 1.3rem;
+
+  }
+  &:focus {
+    border-color: var(--blue);
+    outline: none;
+  }
+
+  &::placeholder {
+    opacity: 1;
+  }
+}
+
+.text-blue {
+  color: var(--blue);
+}
+.text-grey {
+  color: var(--grey);
+}
+
+.text-white {
+  color: var(--white);
+}
+.text-red {
+  color: var(--red);
+}
+
+
+
+
+.mt-200 {
+  margin-top: 20rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 10rem;
+  }
+}
+
+.mt-160 {
+  margin-top: 16rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 8rem;
+  }
+}
+
+.mt-80 {
+  margin-top: 8rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 4rem;
+  }
+}
+
+.mt-70 {
+  margin-top: 7rem;
+}
+
+.mt-40 {
+  margin-top: 4rem;
+}
+
+.mt-20 {
+  margin-top: 2rem;
+}
+
+.mt-5 {
+  margin-top: 0.5rem;
+}
+
+.page-button {
+  background-color: var(--blue);
+  border-radius: 1rem;
+  padding: 1.4rem 2.8rem;
+
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  /* identical to box height */
+
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: var(--white);
+  text-align: center;
+  transition: filter .3s;
+  display: inline-block;
+  @include breakpoint($xl-bp) {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      filter: brightness(90%)
+    }
+  }
+
+  &:active {
+    filter: brightness(85%);
+  }
+}
+
+.page-button-white {
+  background: var(--white);
+  border: 0.2rem solid var(--blue);
+  border-radius: 1rem;
+  padding: 1.4rem 2.8rem;
+  text-align: center;
+  transition: background-color .3s, color .3s, filter .3s;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--blue);
+      color: var(--white);
+      svg {
+        stroke: var(--white);
+      }
+    }
+  }
+
+  &:active {
+    background-color: var(--blue);
+    color: var(--white);
+    filter: brightness(1.1);
+    svg {
+      stroke: var(--white);
+    }
+  }
+}
+
+.custom-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  li {
+    position: relative;
+    padding-left: 2.6rem;
+    &::before {
+      content: '';
+      width: 1.6rem;
+      height: 1.6rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 16V6L3 16H13Z' fill='%2342A9DE'/%3E%3C/svg%3E%0A");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.page-block {
+  background: var(--white);
+  /* 1 */
+  
+  box-shadow: 0px 0px 2rem rgba(26, 29, 30, 0.1);
+  border-radius: 1rem;
+}
+
+.mobile-hidden {
+  @include breakpoint($xl-bp) {
+    display: none;
+  }
+}
+
+.desctop-hidden {
+  display: none;
+  @include breakpoint($xl-bp) {
+    display: block;
+  }
+}

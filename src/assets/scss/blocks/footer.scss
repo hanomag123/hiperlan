@@ -1,0 +1,197 @@
+.footer {
+  padding-top: 12rem;
+  padding-bottom: 6rem;
+  background-color: var(--black);
+  @include breakpoint($xl-bp) {
+    padding-top: 4rem;
+    padding-bottom: 9.2rem;
+  }
+
+  button,
+  a {
+    &:hover {
+      color: var(--blue);
+    }
+  }
+}
+
+.footer-logo {
+  width: 26.2rem;
+  height: 6.5rem;
+  @include breakpoint($xl-bp) {
+    width: 19.8rem;
+    height: 4.9rem;
+  }
+}
+
+.footer-top-button {
+  color: var(--white);
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  position: relative;
+  left: 1rem;
+  @include breakpoint($xl-bp) {
+    left: 0;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  &::after {
+    content: '';
+    display: block;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='43' viewBox='0 0 16 43' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 41.5C7 42.0523 7.44772 42.5 8 42.5C8.55228 42.5 9 42.0523 9 41.5H7ZM8.70711 0.792892C8.31658 0.402367 7.68342 0.402367 7.29289 0.792892L0.928932 7.15685C0.538408 7.54738 0.538408 8.18054 0.928932 8.57107C1.31946 8.96159 1.95262 8.96159 2.34315 8.57107L8 2.91421L13.6569 8.57107C14.0474 8.96159 14.6805 8.96159 15.0711 8.57107C15.4616 8.18054 15.4616 7.54738 15.0711 7.15685L8.70711 0.792892ZM9 41.5L9 1.5H7L7 41.5H9Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex: 0 0 auto;
+    width: 1.6rem;
+    height: 4.3rem;
+    @include breakpoint($xl-bp) {
+      height: 2rem;
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='22' viewBox='0 0 16 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 21C7 21.5523 7.44772 22 8 22C8.55228 22 9 21.5523 9 21H7ZM8.70711 0.292892C8.31658 -0.0976315 7.68342 -0.0976315 7.29289 0.292892L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292892ZM9 21L9 1H7L7 21H9Z' fill='white'/%3E%3C/svg%3E%0A");
+    }
+  }
+}
+
+.footer-mid {
+  margin-top: 6rem;
+  display: grid;
+  grid-template-columns: 36rem 36rem 20rem 28rem;
+  justify-content: space-between;
+  gap: 4rem;
+  @include breakpoint($xl-bp) {
+    grid-template-columns: 1fr;
+    margin-top: 4rem;
+
+  }
+  nav > ul,
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    @include breakpoint($xl-bp) {
+      gap: 2rem;
+    }
+    & > li > ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    a {
+      line-height: 140%;
+    }
+  }
+  a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    line-height: 2.2rem;
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      flex: 0 0 auto;
+    }
+  }
+
+  .footer-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--white);
+    svg {
+      stroke: var(--white);
+      fill: transparent;
+      width: 2.4rem;
+      height: 2.4rem;
+      flex: 0 0 auto;
+    }
+  }
+
+  .footer-callback {
+    gap: 1rem;
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+
+
+
+}
+.underline {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 0.2rem;
+  @include breakpoint($sm-bp) {
+    text-underline-offset: 0.15rem;
+  }
+}
+
+.footer-bot {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  margin-top: 6rem;
+  padding-top: 3rem;
+  border-top: 0.1rem solid var(--white);
+  @include breakpoint($xl-bp) {
+    grid-template-columns: 1fr;
+    margin-top: 4rem;
+    padding-top: 2rem;
+  }
+  ul {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    @include breakpoint($xl-bp) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      @include breakpoint($xl-bp) {
+        flex-direction: column;
+      }
+      &:first-child {
+        &::before {
+          content: unset;
+        }
+      }
+      &::before {
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg width='2' height='18' viewBox='0 0 2 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.0520001 17.492V0.643999H1.24V17.492H0.0520001Z' fill='%23ACACAC'/%3E%3C/svg%3E%0A");
+        background-size: contain;
+        background-color: var(--grey);
+        display: inline-block;
+        width: 0.2rem;
+        height: 1.8rem;
+        margin-right: 3.5rem;
+        @include breakpoint($xl-bp) {
+          content: unset;
+        }
+      }
+    }
+  }
+}
+
+.footer-info {
+  margin-top: auto;
+  align-self: flex-end;
+  @include breakpoint($xl-bp) {
+    display: none;
+  }
+}
+
+.footer-info-mobile {
+  display: none;
+  @include breakpoint($xl-bp) {
+    display: block;
+    margin-top: 4rem;
+  }
+}

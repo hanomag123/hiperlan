@@ -1,11 +1,1387 @@
 <header class="header">
+
   {{> menu}}
 
-  <button class="menu-button myclass">
+  <div class="header-inner container" id="header-inner">
+    <a href="#" class="header__logo img-contain">
+      <img src="./assets/images/logo/logo-header.svg" alt="logo">
+    </a>
+
+    <div class="search-wrapper">
+      <button class="search-toggle">
+        <svg>
+          <use href='#searchIcon'></use>
+        </svg>
+      </button>
+      <div class="search-toggle-wrapper">
+        <form action="#" class="search-form">
+          <input type="search" name="search" placeholder="Поиск..." class="search-input page-input">
+    
+          <button type="submit" class="search-button-submit"><svg>
+              <use href='#searchIcon'></use>
+            </svg>
+          </button>
+
+          <button type="reset" class="search-button-close">
+            <svg><use href='#closeIcon'></use></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+      <a href="#" class="favorite fav" data-number="0">
+        <svg>
+          <use href='#favoriteIcon'></use>
+        </svg>
+      </a>
+
+      <a href="#" class="favorite cart" data-number="0">
+        <svg>
+          <use href='#cartIcon'></use>
+        </svg>
+      </a>
+
+
+    <div class="header-catalog">
+      <button class="header-catalog-button">
+        <span class="dots">
+          <span class="dots-1"></span>
+          <span class="dots-2"></span>
+          <span class="dots-3"></span>
+          <span class="dots-4"></span>
+        </span>
+        каталог
+      </button>
+
+      <div class="header-catalog-block page-catalog">
+        <ul class="header-catalog-container">
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4 active">Шкафы и стойки<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">Кабель<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">Пульты и техническая мебель<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">всепогодные шкафы<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">компоненты медных систем<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">компоненты оптических систем<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">компоненты силовых систем<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">кабеленесущие системы<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">активное сетевое оборудование<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">ибп, сетевые фильтры<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">видеонаблюдение<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">мониторинг и управление<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">инструменты и приборы<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">крепеж и маркировка<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header-catalog-item">
+            <button class="page-catalog-btn h4">распродажа<svg><use href='#arrowAccIcon'></use></svg></button>
+
+            <div class="header-catalog-wrapper page-catalog-wrapper">
+              <ul>
+                <li>
+                  <a href="#">Напольные шкафы</a>
+                  <ul>
+                    <li><a href="#">телекоммуникационные 19”</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Открытые стойки</a>
+                  <ul>
+                    <li><a href="#">однорамные</a></li>
+                    <li><a href="#">двухрамные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные шкафы</a>
+                  <ul>
+                    <li><a href="#">10”</a></li>
+                    <li><a href="#">19”</a></li>
+                    <li><a href="#">Hyperline Home Solution</a></li>
+                    <li><a href="#">антивандальные</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Настенные кроштейны</a>
+                </li>
+
+                <li>
+                  <a href="#">Аксессуары</a>
+                  <ul>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для напольных шкафов</a></li>
+                    <li><a href="#">для настенных шкафов</a></li>
+                    <li><a href="#">для систем ЦОД</a></li>
+                    <li><a href="#">полки</a></li>
+                    <li><a href="#">ящики для документации</a></li>
+                    <li><a href="#">вентиляторные панели</a></li>
+                    <li><a href="#">микропроцессорные панели</a></li>
+                    <li><a href="#">фальш-панели</a></li>
+                    <li><a href="#">крепления для монитора</a></li>
+                    <li><a href="#">освещение</a></li>
+                    <li><a href="#">кабельные организаторы</a></li>
+                    <li><a href="#">панели с DIN рейкой</a></li>
+                    <li><a href="#">крепежные наборы</a></li>
+                    <li><a href="#">ножки, ролики, цоколи</a></li>
+                    <li><a href="#">профили, рейки, уголки</a></li>
+                    <li><a href="#">двери, панели</a></li>
+                    <li><a href="#">панели в пол, потолок, крышу</a></li>
+                    <li><a href="#">заземление</a></li>
+                    <li><a href="#">с 10” креплением</a></li>
+                    <li><a href="#">прочие</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Блоки розеток</a>
+                  <ul>
+                    <li><a href="#">управляемые</a></li>
+                    <li><a href="#">вертикальные</a></li>
+                    <li><a href="#">управляемые</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Климатическое оборудование</a>
+                  <ul>
+                    <li><a href="#">обогреватели</a></li>
+                    <li><a href="#">термостаты и гигростаты</a></li>
+                    <li><a href="#">кондиционеры</a></li>
+                    <li><a href="#">аксессуары</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Системы мониторинга и управления</a>
+                  <ul>
+                    <li><a href="#">обеспечение безопасности и контроль состояния среды</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <div class="header-catalog-content page-catalog-content">
+
+        </div>
+      </div>
+    </div>
+
+    <nav class="header-nav" id="header-nav">
+      <ul>
+        <li class="active"><a href="#">Главная</a></li>
+        <li><a href="#">Акции</a></li>
+        <li><a href="#">О компании</a></li>
+        <li><a href="#">Как сделать заказ</a></li>
+        <li><a href="#">Оплата и доставка</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  
+  <button class="menu-button">
     <span class="burger-button-close">
       <span id="first-line-burger"></span>
       <span id="second-line-burger"></span>
       <span id="third-line-burger"></span>
-  </span>
+    </span>
   </button>
+
 </header>
