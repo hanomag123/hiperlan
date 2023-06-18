@@ -80,7 +80,10 @@ function html(cb) {
         data: srcPath + "data/",
       })
     )
-    .pipe(fileInclude())
+    .pipe(fileInclude({
+      prefix: '@',
+      basepath: '@file',
+    }))
     .pipe(dest(path.build.html))
     .pipe(browserSync.reload({ stream: true }));
 

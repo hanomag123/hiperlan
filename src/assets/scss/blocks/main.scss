@@ -178,7 +178,7 @@
     & + .main-catalog-sublist {
       @include breakpoint($xl-bp) {
         grid-template-rows: 1fr;
-        ul {
+        & > ul {
           padding-bottom: 2rem;
         }
       }
@@ -795,7 +795,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  li {
+  li.page-block {
     &:hover {
       box-shadow: 0px 0px 2rem rgba(26, 29, 30, 0.2);
     }

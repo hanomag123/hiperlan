@@ -1,0 +1,41 @@
+.about-list {
+  columns: 2;
+  column-gap: 4rem;
+  @include breakpoint($xl-bp) {
+    columns: 1;
+  }
+}
+
+.about-block {
+  padding: 4rem;
+  margin-top: 4rem;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  @include breakpoint($xl-bp) {
+    padding: 2rem;
+  }
+  &:first-child {
+    margin-top: 0;
+  }
+
+  p + p {
+    margin-top: 2rem;
+  }
+}
+
+.about-block-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2rem;
+  column-gap: 1.5rem;
+  @include breakpoint($sm-bp) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  li {
+    height: 16rem;
+    @include breakpoint($sm-bp) {
+      height: 10rem;
+    }
+  }
+}
