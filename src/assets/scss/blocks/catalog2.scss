@@ -1,0 +1,492 @@
+.catalog2 {
+  display: grid;
+  grid-template-columns: 52rem 1fr;
+  gap: 4rem;
+  margin-top: 4rem;
+  @include breakpoint($xl-bp) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.catalog2-filter {
+  height: min-content;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  @include breakpoint($xl-bp) {
+    box-shadow: unset;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+.catalog2-filter-wrapper {
+  & > * {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    li {
+      &:first-child {
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+.catalog2-filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  text-align: start;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  @media (hover:hover) and (pointer:fine) {
+    &:hover {
+      color: var(--blue);
+      svg {
+        stroke: var(--blue);
+      }
+    }
+  }
+  &.active {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: transparent;
+    stroke: var(--black);
+    flex: 0 0 auto;
+  }
+}
+
+.catalog2-max-h {
+  max-height: calc(var(--lineNumb) * 3.5rem + 1rem);
+  overflow: hidden;
+  position: relative;
+  transition: max-height .3s;
+  @include breakpoint($xl-bp) {
+    max-height: calc(var(--lineNumb) * 2.8rem + 1rem);
+  }
+  & + .main-catalog-block-button {
+    display: none;
+  }
+  & + .main-catalog-block-button.visible {
+    display: flex;
+  }
+}
+
+.accordion-button {
+  & + .accordion-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .3s;
+    & > * {
+      overflow: hidden;
+    }
+  }
+
+  &.active + .accordion-wrapper {
+    grid-template-rows: 1fr;
+  }
+}
+
+.catalog2-submit {
+  width: 100%;
+  @include breakpoint($xl-bp) {
+    position: sticky;
+    bottom: 2rem;
+    left: 0;
+  }
+}
+
+.range-inputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.podcategory-swiper-wrapper {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  gap: 0;
+  max-width: 108rem;
+  @include breakpoint($xl-bp) {
+    grid-template-columns: 1fr;
+  }
+  &.active-swiper {
+    gap: 4rem;
+    overflow: hidden;
+    .arrows-button {
+      width: 7rem;
+      padding: 0.4rem 1.5rem; 
+      @include breakpoint($xl-bp) {
+        display: none;
+      }
+    }
+  }
+  &.not-active-swiper {
+    .swiper {
+      overflow: visible;
+    }
+  }
+  .arrows-button {
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+    @include breakpoint($xl-bp) {
+      display: none;
+    }
+  }
+}
+
+.podcategory-swiper {
+  width: 100%;
+  @include breakpoint($xl-bp) {
+    margin-top: 2rem;
+  }
+  .swiper-wrapper {
+    @include breakpoint($xl-bp) {
+      flex-wrap: wrap;
+    }
+    @include breakpoint($sm-bp) {
+      gap: 1rem;
+    }
+  }
+  .swiper-slide {
+    width: max-content;
+    margin-right: 2rem;
+    height: min-content;
+    position: relative;
+    padding-bottom: 0.1rem;
+    @include breakpoint($sm-bp) {
+      margin-right: 0;
+    }
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      &:hover ~ .page-block {
+        color: var(--blue);
+      }
+      &:checked {
+        & ~ .page-block {
+          border-color: var(--blue);
+          color: var(--blue);
+        }
+      }
+    }
+
+  }
+  .page-block {
+    padding: 1.2rem 2rem;
+    display: block;
+    border: 0.25rem solid transparent;
+    transition: border-color .3s, color .3s;
+    @include breakpoint($sm-bp) {
+      padding: 1rem 1.4rem;
+    }
+
+  }
+}
+
+
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  border: 0.1rem solid var(--grey);
+  border-radius: 1rem;
+  background-color: var(--white);
+
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1.5rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6L8 10L12 6' stroke='%231A1D1E' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+  transition: transform .3s;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  // border-color: transparent transparent #fff transparent;
+  transform: translateY(-50%) rotate(180deg);
+}
+.select-arrow-active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  padding: 0.75rem 1.5rem;
+  // border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+
+}
+.select-selected {
+  padding-right: 3rem;
+}
+.select-items > div {
+  color: var(--black);
+  padding: 0.75rem 1.5rem;
+}
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: var(--white);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0px 0.5rem 1rem rgba(19, 33, 42, 0.15);
+  border: 0.1rem solid var(--grey);
+  border-top: 0;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  color: var(--blue);
+}
+.select-selected--active {
+  color: var(--black);
+}
+
+.sorting-wrapper {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 0.1rem solid var(--grey);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include breakpoint($xl-bp) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  @include breakpoint($sm-bp) {
+    gap: 1rem;
+  }
+}
+
+.sorting-block {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  @include breakpoint($xl-bp) {
+    display: grid;
+    grid-template-columns: 1fr 24rem;
+    justify-content: space-between;
+    width: 100%;
+  }
+  @include breakpoint($sm-bp) {
+    grid-template-columns: 1fr 20rem;
+  }
+}
+
+.w-90 {
+  width: 9rem;
+  @include breakpoint($xl-bp) {
+    width: 100%;
+  }
+}
+.w-360 {
+  width: 36rem;
+  @include breakpoint($xl-bp) {
+    width: 100%;
+  }
+}
+
+.view {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  @include breakpoint($xl-bp) {
+    display: none;
+  }
+}
+.view-button {
+  width: 4rem;
+  height: 4rem;
+  border: 0.25rem solid transparent;
+  transition: outline-color .3s;
+  svg {
+    fill: var(--grey);
+  }
+  &.active {
+    border-color: var(--blue);
+    svg {
+      fill: var(--blue);
+    }
+    outline-color: var(--blue);
+  }
+}
+
+.catalog2-content {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3rem;
+  row-gap: 8rem;
+
+  @include breakpoint($xl-bp) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4rem;
+  }
+  @include breakpoint($sm-bp) {
+    gap: 2rem;
+  }
+  &.--horizontal {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4rem;
+    @include breakpoint($sm-bp) {
+      gap: 2rem;
+    }
+  }
+}
+
+.filter-button {
+  display: none;
+  @include breakpoint($xl-bp) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  svg {
+      width: 1.6rem;
+      height: 1.7rem;
+      fill: transparent;
+      stroke: var(--blue);
+  }
+
+  @include breakpoint($xl-bp) {
+    & + .filter-wrapper {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+    &.active + .filter-wrapper {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
+  }
+}
+
+.filter-wrapper {
+  @include breakpoint($xl-bp) {
+    transition: opacity .3s;
+    will-change: opacity;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    overflow: auto;
+    padding-top: 2rem;
+    background-color: var(--white);
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+.filter-title {
+  display: none;
+  @include breakpoint($xl-bp) {
+    display: block;
+    padding-left: 2rem;
+    padding-right: 5rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.filter-clones {
+  display: none;
+  @include breakpoint($xl-bp) {
+    gap: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    .filter-clones-item {
+      margin-top: 1rem;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.filter-clones-item {
+  background-color: #E5F6FF;
+  border-radius: 0.5rem;
+  padding: 0.4rem 1rem;
+  display: inline-block;
+  width: max-content;
+  max-width: 100%;
+}
+
+.filter-btn-hidden {
+  display: none;
+  & + .accordion-wrapper {
+    display: block;
+    @include breakpoint($xl-bp) {
+      display: grid;
+    }
+    & > * {
+      overflow: visible;
+      @include breakpoint($xl-bp) {
+        overflow: hidden;
+      }
+    }
+  }
+  @include breakpoint($xl-bp) {
+    display: flex;
+  }
+}

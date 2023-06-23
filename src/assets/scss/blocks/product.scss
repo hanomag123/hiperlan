@@ -1,0 +1,326 @@
+
+.product-container {
+  display: grid;
+  grid-template-columns: 56rem 1fr;
+  column-gap: 2rem;
+  row-gap: 6rem;
+  @include breakpoint($xl-bp) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.product-subcontainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  height: min-content;
+  padding-right: 2rem;
+  @include breakpoint($xl-bp) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.product-sub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  li {
+    display: grid;
+    grid-template-columns: 18rem 24rem;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      &:first-child {
+        color: var(--grey);
+      }
+      &:last-child {
+        text-align: end;
+      }
+    }
+  }
+}
+
+.count-block {
+
+
+  .store-item {
+    padding: 0;
+    box-shadow: unset;
+    .store-text-wrapper,
+    .store-img-wrapper,
+    .store-sublist {
+      display: none;
+    }
+    .store-count {
+      display: none;
+    }
+    .store-buttons-wrapper {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+      margin-top: 2rem;
+      @include breakpoint($sm-bp) {
+        margin-top: 0;
+      }
+      .store-buttons {
+        gap: 2rem;
+      }
+    }
+  }
+
+}
+
+.count-list {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  @include breakpoint($sm-bp) {
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  & > li {
+    padding-top: 4rem;
+    border-top: 0.1rem solid var(--lgrey);
+    @include breakpoint($sm-bp) {
+      padding-top: 2rem;
+    }
+    &:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+    & > ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      & > li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        div {
+          &:last-child {
+            font-weight: 600;
+          }
+        }
+      }
+    } 
+
+  }
+}
+
+.product-sub-btn {
+  margin-top: 4.8rem;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-swiper-wrapper {
+  padding: 4rem 9.9rem 9.1rem;
+  position: relative;
+  margin-left: 2rem;
+  max-width: 52rem;
+  @include breakpoint($xl-bp) {
+    margin: 0 auto;
+    padding: 4rem 2rem 9rem;
+  }
+  @include breakpoint($sm-bp) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .arrows {
+    position: absolute;
+    width: 100%;
+    bottom: 2rem;
+    left: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: space-between;
+    .arrows-button {
+      box-shadow: unset;
+    }
+  }
+}
+
+.product-swiper {
+
+  .swiper-slide {
+    height: 43.9rem;
+    @include breakpoint($xl-bp) {
+      height: 26rem;
+    }
+    img {
+      width: 100%;
+      height: 100%; 
+      object-fit: scale-down;
+      object-position: center;
+    }
+  }
+
+
+}
+
+.tumbs-swiper {
+  padding-top: 4rem;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  padding-right: 2rem;
+  @include breakpoint($xl-bp) {
+    padding-top: 2.5rem;
+  }
+  .swiper-slide {
+    height: 10rem;
+    width: 10rem;
+    padding: 1rem;
+    box-shadow: 0px 0px 2rem rgba(26, 29, 30, 0.1);
+    border-radius: 1rem;
+    margin-right: 4rem;
+    @include breakpoint($sm-bp) {
+      width: 6.5rem;
+      height: 6.5rem;
+      margin-right: 2.5rem;
+      padding: 0.6rem;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    &.swiper-slide-active {
+      outline: 0.25rem solid var(--blue);
+    }
+  }
+}
+
+.product-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column: 2 span;
+  gap: 4rem;
+  @include breakpoint($xl-bp) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  .page-block {
+    grid-column: 2 span;
+  }
+
+}
+
+.product-info {
+  .cms-block  {
+    ul { 
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    p {
+      margin-bottom: 1rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+}
+
+.product-info-wide {
+  grid-column: 2 span;
+}
+
+.product-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 4rem;
+  @include breakpoint($sm-bp) {
+    margin-top: 2rem;
+  }
+  li {
+    display: grid;
+    grid-template-columns: 34rem 1fr;
+    align-items: center;
+    gap: 4rem;
+    @include breakpoint($xl-bp) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    @include breakpoint($sm-bp) {
+      gap: 0.5rem;
+    }
+    div {
+      &:first-child {
+        color: var(--grey);
+      }
+    }
+  }
+}
+
+.product-info-table {
+  @include breakpoint($xl-bp) {
+    padding-left: 2rem;
+    padding-right: 0;
+  }
+
+}
+
+.table {
+  overflow: auto;
+  border-bottom: 0.1rem solid var(--lgrey);
+
+}
+
+.table-head {
+  line-height: 2.2rem;
+  font-weight: 600;
+}
+.table-row {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 0.1rem solid var(--lgrey);
+  width: max-content;
+  &.active {
+    & > ul {
+      background-color: #F0F0F0;
+    }
+  }
+  & > ul {
+    display: flex;
+    & > li {
+      padding: 1rem;
+      width: 12rem;
+      flex: 0 0 auto;
+      &:first-child {
+        width: 24rem;
+        @include breakpoint($xl-bp) {
+          width: 18rem;
+        }
+      }
+      &:nth-child(2) {
+        width: 46rem;
+        @include breakpoint($xl-bp) {
+          width: 29rem;
+        }
+      }
+
+      &:nth-child(5),
+      &:nth-child(4) {
+        width: 17rem;
+      }
+      &:nth-child(6) {
+        width: 16rem;
+      }
+    }
+  }
+}

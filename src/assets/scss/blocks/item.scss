@@ -1,0 +1,428 @@
+.store-item {
+  box-shadow: 0px 0px 2rem rgba(26, 29, 30, 0.1);
+  border-radius: 1rem;
+  background-color: var(--white);
+  padding: 2rem;
+  &:hover {
+    .store-img {
+      height: 26rem;
+
+      @include breakpoint($xl-bp) {
+        height: var(--headerItemMob);
+      }
+    }
+
+    .store-buttons-wrapper {
+      grid-template-rows: 1fr;
+    }
+
+    .store-text-2 {
+      color: var(--blue);
+    }
+  }
+
+  &.--action {
+    .store-label {
+      background-color: var(--red);
+    }
+
+    .store-price {
+      color: var(--red);
+    }
+    .store-prevprice {
+      display: block;
+    }
+  }
+}
+
+
+
+.store-label {
+  border-radius: 0.4rem;
+
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: var(--white);
+
+  background-color: #8BC444;
+  padding: 0.3rem 0.8rem;
+  display: inline-block;
+
+  &.--orange {
+    background-color: #FBC02F;
+  }
+
+  &.--red {
+    background-color: var(--red);
+  }
+}
+
+.store-img {
+  height: var(--headerItemDesc);
+  transition: height .3s;
+
+  @include breakpoint($xl-bp) {
+    height: var(--headerItemMob);
+  }
+}
+
+
+.store-text-1 {
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.store-text-2 {
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.store-text-3 {
+  letter-spacing: -0.001em;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.store-sublist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.store-buttons-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .3s;
+
+  @include breakpoint($xl-bp) {
+    grid-template-rows: 1fr;
+  }
+}
+
+.store-buttons {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 1rem;
+  overflow: hidden;
+
+  @include breakpoint($xl-bp) {
+    overflow: unset;
+  }
+}
+
+.store-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    stroke-width: 2;
+    fill: transparent;
+    stroke: var(--white);
+  }
+}
+
+.store-favor {
+  width: 5.2rem;
+  height: 5.2rem;
+  padding: 1rem;
+  margin-top: 2rem;
+
+  @include breakpoint($sm-bp) {
+    padding: 0.7rem;
+    height: 4.8rem;
+  }
+
+  &.active {
+    background-color: var(--blue);
+
+    svg {
+      fill: var(--white);
+      stroke: var(--white);
+    }
+  }
+
+  svg {
+    fill: transparent;
+    stroke: var(--blue);
+    stroke-width: 2;
+  }
+}
+
+.store-prevprice {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 140%;
+  text-decoration-line: line-through;
+  display: none;
+  @include breakpoint($sm-bp) {
+    font-size: 0.8rem;
+  }
+}
+
+.row-hidden {
+  display: none;
+}
+
+.store-count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 30.6rem;
+  gap: 1rem;
+  margin-top: 2rem;
+  &.--product {
+    margin-top: 0;
+  }
+  @include breakpoint($xl-bp) {
+    min-width: 100%;
+  }
+}
+
+.store-count-wrapper {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  width: 14.7rem;
+  @include breakpoint($xl-bp) {
+    width: 12.5rem;
+  }
+}
+
+.store-count-btn {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  @include breakpoint($xl-bp) {
+    width: 4rem;
+    height: 4rem;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+  }
+}
+
+.store-count-input {
+  width: 100%;
+  border: 0;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  /* identical to box height */
+
+
+  /* 3 */
+  text-align: center;
+  color: var(--blue);
+  @include breakpoint($sm-bp) {
+    font-size: 1.8rem;
+    line-height: 1.6rem;
+  }
+  &:focus {
+    outline: none;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.store-count-number {
+  min-width: 11.9rem;
+  text-align: end;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.store-name-hidden {
+  display: none;
+}
+
+.no-count,
+.swiper-wrapper {
+  .store-count {
+    display: none;
+  }
+}
+
+.--horizontal {
+  .store-item {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 2rem;
+    @include breakpoint($xl-bp) {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  .store-name-hidden {
+    @include breakpoint($xl-bp) {
+      display: none;
+    }
+  }
+
+  .store-text-1 {
+    margin-top: 0;
+  }
+  .store-text-2 {
+    margin-top: 1rem;
+  }
+  .store-text-3 {
+    margin-top: 1rem;
+  }
+
+  .store-name {
+    display: none;
+  }
+
+  .store-img-wrapper {
+    position: relative;
+    grid-row: 2 span;
+  }
+
+  .store-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    @include breakpoint($xl-bp) {
+      position: static;
+      flex-direction: row;
+      align-items: center;
+      height: min-content;
+    }
+  }
+
+  .store-img {
+    width: 26rem;
+    height: 26rem;
+    @include breakpoint($xl-bp) {
+      width: 100%;
+      height: var(--headerItemMob);
+    }
+  }
+
+  .store-bottom {
+    display: flex;
+    justify-content: space-between;
+    height: min-content;
+    margin-top: auto;
+    @include breakpoint($xl-bp) {
+      flex-direction: column;
+    }
+  }
+
+  .store-sublist {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 3rem;
+    margin-top: 0;
+    @include breakpoint($xl-bp) {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @include breakpoint($sm-bp) {
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+  }
+
+  .store-prevprice {
+    order: 1;
+    align-self: center;
+    @include breakpoint($xl-bp) {
+      order: unset;
+    }
+  }
+
+  .store-sublist-item {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 0;
+    min-width: 12rem;
+    .flex-gap-10 {
+      gap: 0.5rem;
+    }
+    @include breakpoint($xl-bp) {
+      flex-direction: row;
+    }
+  }
+
+  .row-hidden {
+    display: block;
+  }
+
+  .column-hidden {
+    display: none;
+  }
+
+  .store-buttons-wrapper {
+    grid-template-rows: 1fr;
+  }
+
+  .store-button {
+    margin-top: 0;
+  }
+
+  .store-favor {
+    margin-top: 0;
+  }
+}
+
+.no-cart {
+  .store-buttons {
+    display: none;
+  }
+}

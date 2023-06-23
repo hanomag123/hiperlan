@@ -55,14 +55,18 @@ for (const form of document.forms) {
     const parent = this.closest('.regModal');
     const feedback = document.querySelector('#feedback');
 
+    const reset = this.closest('.store-count');
 
+    if (reset) {
+      return;
+    }
 
     for(let [name, value] of formData.entries()) {
       console.log(name, value);
     }
 
     this.reset();
-    const customfeedback = this.closest('.custom-feedback');
+    const customfeedback = this.closest('.custom-feedback,.cart-order'); 
 
 
     if (customfeedback) {
@@ -78,3 +82,4 @@ for (const form of document.forms) {
     }
   });
 }
+

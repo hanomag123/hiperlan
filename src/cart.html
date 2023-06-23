@@ -1,0 +1,269 @@
+<ul class="breadcrumbs container">
+  <li><a href="#">Главная</a></li>
+  <li><a href="#">Корзина</a></li>
+</ul>
+
+<section class="container">
+  <h2 class="mt-40">Корзина</h2>
+
+  <div class="cart-container">
+    <div class="cart-items">
+      <form class="favorite-block mt-40">
+        <label class="checkbox-label">
+          <input type="checkbox" name="check1">
+          <div class="checkbox"></div>
+          Выбрать все
+        </label>
+
+        <div class="favorite-buttons top">
+          <button class="page-button-white min-w-300">Удалить выбранное</button>
+        </div>
+      </form>
+      <ul class="cart-list no-cart">
+
+        <li class="store-item">
+          <div class="store-img-wrapper">
+            <div class="store-top justify-between">
+              <div class="flex-gap-10">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="chekc1">
+                  <div class="checkbox"></div>
+                </label>
+                <div class="store-label --orange">ХИТ</div>
+              </div>
+              <div>
+                <div class="store-name-hidden h4">Hyperline</div>
+                <div class="store-number text-grey">52601</div>
+              </div>
+            </div>
+
+            <div class="img-contain store-img">
+              <img src="./assets/images/store/store-1.jpg" alt="store">
+            </div>
+          </div>
+
+          <div class="store-text-wrapper">
+            <div class="store-text-1 text-grey mt-20">
+              SHE-18IEC-6BIEC-3V-3PVR
+            </div>
+
+            <a href="#" class="store-text-2 h4">
+              <span class="store-name">Hyperline</span> Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2
+              розетки IEC320 С19
+            </a>
+
+            <div class="store-text-3 mt-5">
+              + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+              (ДхШхВ), корпус алюминий, черный
+            </div>
+          </div>
+
+          <div class="store-bottom">
+            <ul class="store-sublist mt-20">
+              <li class="store-sublist-item justify-between">
+                <div class="store-sublist-title text-grey"><span class="column-hidden">Стоимость (шт.)</span><span
+                    class="row-hidden">Цена (шт.)</span></div>
+                <div class="flex-gap-10">
+                  <div class="store-prevprice">0р</div>
+                  <div class="store-price font-semibold">750₽</div>
+                </div>
+              </li>
+              <li class="store-sublist-item justify-between">
+                <div class="store-sublist-title text-grey">от 25 000₽</div>
+                <div class="flex-gap-10">
+                  <div class="store-prevprice">0р</div>
+                  <div class="store-price font-semibold">590₽</div>
+                </div>
+              </li>
+              <li class="store-sublist-item justify-between">
+                <div class="store-sublist-title text-grey">от 100 000₽</div>
+                <div class="flex-gap-10">
+                  <div class="store-prevprice">0р</div>
+                  <div class="store-price font-semibold">350₽</div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="store-buttons-wrapper">
+              <form action="#" class="store-buttons">
+                <button type="button" data-modal="#addProduct" class="store-button page-button"><svg>
+                    <use href='#cartIcon2'></use>
+                  </svg>в корзину</button>
+                <button type="submit" class="store-favor page-button-white"><svg>
+                    <use href='#favoriteIcon'></use>
+                  </svg></button>
+              </form>
+
+              <form action="#" class="store-count">
+                <div class="store-count-wrapper">
+                  <button class="page-button-white store-count-btn minus h5" type="button">-</button>
+                  <input name="count" class="store-count-input" value="1" autocomplete="off">
+                  <button class="page-button-white store-count-btn plus h5" type="button">+</button>
+                </div>
+
+                <div class="store-count-number h3 text-blue">7619.34 ₽</div>
+              </form>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <form class="favorite-buttons bot mt-40">
+        <button class="page-button-white">Удалить выбранное</button>
+      </form>
+    </div>
+
+    <div class="cart-order page-block p-40" id="order">
+
+      <div class="cart-order-modal error">
+        <h3 class="h2">Ваш заказ</h2>
+          <form action="#">
+            <ul class="count-list">
+              <li>
+                <ul data-error="Минимальная сумма заказа – 1000 ₽">
+                  <li>
+                    <div>Товаров</div>
+                    <div>2</div>
+                  </li>
+                  <li>
+                    <div>Общая стоимость</div>
+                    <div>7619.34 ₽</div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <ul data-error="Минимальная сумма для осуществления доставки – 5000 ₽"> 
+                  <li>
+                    <div class="order-select-wrapper">
+                      <div class="order-select-type">Доставка</div>
+
+                      <div class="order-select">
+                        <button type="button" class="order-select-name">Выбрать</button>
+                        <ul class="order-select-list">
+                          <li>
+                            <button type="button" class="order-select-btn">самовывоз</button>
+                          </li>
+
+                          <li>
+                            <button type="button" class="order-select-btn">по Москве</button>
+
+                            <div class="order-select-wrapper">
+                              <ul>
+                                <li>
+                                  <div>Срок доставки</div>
+                                  <div>2-5 дней</div>
+                                </li>
+                                <li>
+                                  <div>Стоимость доставки</div>
+                                  <div>750 ₽</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+
+                          <li>
+                            <button type="button" class="order-select-btn">по Московской обл.</button>
+
+                            <div class="order-select-wrapper">
+                              <div class="order-select-inputs">
+                                <input type="text" class="page-input col-span-2" name="Город" placeholder="Город">
+                                <input type="text" class="page-input col-span-2" name="Улица" placeholder="Улица">
+                                <input type="text" class="page-input" name="Дом" placeholder="Дом">
+                                <input type="text" class="page-input" name="Квартира" placeholder="Квартира">
+                              </div>
+
+                              <ul>
+                                <li>
+                                  <div>Срок доставки</div>
+                                  <div>2-5 дней</div>
+                                </li>
+                                <li>
+                                  <div>Стоимость доставки</div>
+                                  <div>1050 ₽</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+
+                          <li>
+                            <button type="button" class="order-select-btn selected">регионы</button>
+
+                            <div class="order-select-wrapper">
+                              <div class="order-select-inputs">
+                                <input type="text" class="page-input col-span-2" name="Область" placeholder="Область">
+                                <input type="text" class="page-input col-span-2" name="Город" placeholder="Город">
+                                <input type="text" class="page-input col-span-2" name="Улица" placeholder="Улица">
+                                <input type="text" class="page-input" name="Дом" placeholder="Дом">
+                                <input type="text" class="page-input" name="Квартира" placeholder="Квартира">
+                              </div>
+
+                              <ul>
+                                <li>
+                                  <div>Срок доставки</div>
+                                  <div>2-5 дней</div>
+                                </li>
+                                <li>
+                                  <div>Стоимость доставки</div>
+                                  <div>1050 ₽</div>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="order-content">
+
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <ul>
+                  <li>
+                    <div>Оплата</div>
+                    <div>безналичный расчёт</div>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <div class="cart-personal">
+                  <div class="h5">Личные данные</div>
+                  <div class="order-select-inputs mt-20">
+                    <input type="text" class="page-input col-span-2" name="Имя" placeholder="Имя" required>
+                    <input type="text" class="page-input col-span-2" name="E-mail или телефон"
+                      placeholder="E-mail или телефон" required>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="total">
+                  <div class="h5">Итого</div>
+                  <div class="h2 text-blue">7619.34 ₽</div>
+                </div>
+              </li>
+            </ul>
+
+            <button type="submit" class="page-button cart-button" data-scroll="order">Оформить заказ</button>
+          </form>
+      </div>
+
+      <div class="cart-order-feedback">
+        <h3 class="h2">заказ оформлен</h3>
+
+        <p class="cart-feedback-text">Спасибо, Ваш заказ оформлен. <br class="desctop-hidden"> В ближайшее время с Вами свяжется наш консультант
+          для подтверждения заказа и уточнения информации</p>
+
+        <form class="mt-40 mob-mt-20">
+          <button class="page-button-white cart-feedback-btn" type="submit" data-modal="#detailsModal">Посмотреть детали заказа</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,312 @@
+<ul class="breadcrumbs container">
+  <li><a href="#">Главная</a></li>
+  <li><a href="#">Избранное</a></li>
+</ul>
+
+<section class="container">
+  <h2 class="mt-40">Избранное</h2>
+
+  <form class="favorite-block mt-40">
+    <label class="checkbox-label">
+      <input type="checkbox" name="check1">
+      <div class="checkbox"></div>
+      Выбрать все
+    </label>
+
+    <div class="favorite-buttons top">
+      <button class="page-button-white min-w-300">Удалить выбранное</button>
+      <button class="page-button min-w-420">Добавить выбранное в корзину</button>
+    </div>
+  </form>
+
+  <ul class="favorite-list no-count">
+
+    <li class="store-item">
+      <div class="store-img-wrapper">
+        <div class="store-top justify-between">
+          <div class="flex-gap-10">
+            <label class="checkbox-label">
+              <input type="checkbox" name="chekc1" checked>
+              <div class="checkbox"></div>
+            </label>
+            <div class="store-label">new</div>
+          </div>
+          <div>
+            <div class="store-name-hidden h4">Hyperline</div> 
+            <div class="store-number text-grey">52601</div>
+          </div>
+        </div>
+  
+        <a href="#" class="img-contain store-img">
+          <img src="./assets/images/store/store-1.jpg" alt="store">
+        </a>
+      </div>
+
+      <div class="store-text-wrapper">
+        <div class="store-text-1 text-grey mt-20">
+          SHE-18IEC-6BIEC-3V-3PVR
+        </div>
+  
+        <a href="#" class="store-text-2 h4">
+          <span class="store-name">Hyperline</span> Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+        </a>
+  
+        <div class="store-text-3 mt-5">
+          + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+          (ДхШхВ), корпус алюминий, черный
+        </div>
+      </div>
+
+      <div class="store-bottom">
+        <ul class="store-sublist mt-20">
+          <li class="store-sublist-item justify-between">
+            <div class="store-sublist-title text-grey"><span class="column-hidden">Стоимость (шт.)</span><span class="row-hidden">Цена (шт.)</span></div>
+            <div class="flex-gap-10">
+              <div class="store-prevprice">0р</div>
+              <div class="store-price font-semibold">750₽</div>
+            </div>
+          </li>
+          <li class="store-sublist-item justify-between"> 
+            <div class="store-sublist-title text-grey">от 25 000₽</div>
+            <div class="flex-gap-10">
+              <div class="store-prevprice">0р</div>
+              <div class="store-price font-semibold">590₽</div>
+            </div>
+          </li>
+          <li class="store-sublist-item justify-between">
+            <div class="store-sublist-title text-grey">от 100 000₽</div>
+            <div class="flex-gap-10">
+              <div class="store-prevprice">0р</div>
+              <div class="store-price font-semibold">350₽</div>
+           </div>
+          </li>
+        </ul>
+  
+        <div class="store-buttons-wrapper">
+          <form action="#" class="store-buttons">
+            <button type="button" data-modal="#addProduct" class="store-button page-button"><svg>
+                <use href='#cartIcon2'></use>
+              </svg>в корзину</button>
+            <button type="submit" class="store-favor page-button-white"><svg>
+                <use href='#favoriteIcon'></use>
+              </svg></button>
+          </form>
+
+          <form action="#" class="store-count">
+            <div class="store-count-wrapper">
+              <button class="page-button-white store-count-btn minus h5" type="button">-</button>
+              <input name="count" class="store-count-input" value="1" autocomplete="off">
+              <button class="page-button-white store-count-btn plus h5" type="button">+</button>
+            </div>
+
+            <div class="store-count-number h3 text-blue">7619.34 ₽</div>
+          </form>
+        </div>
+      </div>
+    </li>
+
+    @for(let i = 0; i < 4; i++) {
+
+    <li class="store-item">
+      <div class="store-img-wrapper">
+        <div class="store-top justify-between">
+          <div class="flex-gap-10">
+            <label class="checkbox-label">
+              <input type="checkbox" name="chekc1">
+              <div class="checkbox"></div>
+            </label>
+            <div class="store-label --orange">ХИТ</div>
+          </div>
+          <div>
+            <div class="store-name-hidden h4">Hyperline</div> 
+            <div class="store-number text-grey">52601</div>
+          </div>
+        </div>
+  
+        <a href="#" class="img-contain store-img">
+          <img src="./assets/images/store/store-1.jpg" alt="store">
+        </a>
+      </div>
+
+      <div class="store-text-wrapper">
+        <div class="store-text-1 text-grey mt-20">
+          SHE-18IEC-6BIEC-3V-3PVR
+        </div>
+  
+        <a href="#" class="store-text-2 h4">
+          <span class="store-name">Hyperline</span> Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+        </a>
+  
+        <div class="store-text-3 mt-5">
+          + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+          (ДхШхВ), корпус алюминий, черный
+        </div>
+      </div>
+
+      <div class="store-bottom">
+        <ul class="store-sublist mt-20">
+          <li class="store-sublist-item justify-between">
+            <div class="store-sublist-title text-grey"><span class="column-hidden">Стоимость (шт.)</span><span class="row-hidden">Цена (шт.)</span></div>
+            <div class="flex-gap-10">
+              <div class="store-prevprice">0р</div>
+              <div class="store-price font-semibold">750₽</div>
+            </div>
+          </li>
+          <li class="store-sublist-item justify-between"> 
+            <div class="store-sublist-title text-grey">от 25 000₽</div>
+            <div class="flex-gap-10">
+              <div class="store-prevprice">0р</div>
+              <div class="store-price font-semibold">590₽</div>
+            </div>
+          </li>
+          <li class="store-sublist-item justify-between">
+            <div class="store-sublist-title text-grey">от 100 000₽</div>
+            <div class="flex-gap-10">
+              <div class="store-prevprice">0р</div>
+              <div class="store-price font-semibold">350₽</div>
+           </div>
+          </li>
+        </ul>
+  
+        <div class="store-buttons-wrapper">
+          <form action="#" class="store-buttons">
+            <button type="button" data-modal="#addProduct" class="store-button page-button"><svg>
+                <use href='#cartIcon2'></use>
+              </svg>в корзину</button>
+            <button type="submit" class="store-favor page-button-white"><svg>
+                <use href='#favoriteIcon'></use>
+              </svg></button>
+          </form>
+
+          <form action="#" class="store-count">
+            <div class="store-count-wrapper">
+              <button class="page-button-white store-count-btn minus h5" type="button">-</button>
+              <input name="count" class="store-count-input" value="1" autocomplete="off">
+              <button class="page-button-white store-count-btn plus h5" type="button">+</button>
+            </div>
+
+            <div class="store-count-number h3 text-blue">7619.34 ₽</div>
+          </form>
+        </div>
+      </div>
+    </li>
+
+    }
+
+
+  </ul>
+
+  <form class="favorite-buttons bot mt-40">  
+    <button class="page-button-white">Удалить выбранное</button>
+    <button class="page-button">Добавить выбранное в корзину</button>
+  </form>
+
+</section>
+
+<section class="news mt-200">
+  <div class="news-top container">
+    <h2>Эти товары часто покупают вместе</h2>
+
+    <div class="arrows">
+      <button class="prev arrows-button"><svg>
+          <use href='#arrowL'></use>
+        </svg></button>
+      <div class="swiper-pagination"></div>
+      <button class="next arrows-button"><svg>
+          <use href='#arrowR'></use>
+        </svg></button>
+    </div>
+  </div>
+
+  <div class="swiper-container">
+    <div class="swiper news-swiper">
+      <div class="swiper-wrapper">
+
+        @for(let i = 0; i < 4; i++) {
+
+        <div class="swiper-slide store-item --action">
+          <div class="store-img-wrapper">
+            <div class="store-top justify-between">
+              <div class="flex-gap-10">
+                <div class="store-label">Скидка -30%</div>
+              </div>
+              <div>
+                <div class="store-name-hidden h4">Hyperline</div> 
+                <div class="store-number text-grey">52601</div>
+              </div>
+            </div>
+      
+            <a href="#" class="img-contain store-img">
+              <img src="./assets/images/store/store-1.jpg" alt="store">
+            </a>
+          </div>
+    
+          <div class="store-text-wrapper">
+            <div class="store-text-1 text-grey mt-20">
+              SHE-18IEC-6BIEC-3V-3PVR
+            </div>
+      
+            <a href="#" class="store-text-2 h4">
+              <span class="store-name">Hyperline</span> Блок розеток, вертикальный, 3 блока по 6 розеток IEC320 С13 + 2 розетки IEC320 С19
+            </a>
+      
+            <div class="store-text-3 mt-5">
+              + авт. выключатель, кабель питания 3м (5х6.0мм2) с вилкой IEC 60309 32A (3P+N+E), 380В, 1556х68х44.4мм
+              (ДхШхВ), корпус алюминий, черный
+            </div>
+          </div>
+    
+          <div class="store-bottom">
+            <ul class="store-sublist mt-20">
+              <li class="store-sublist-item justify-between">
+                <div class="store-sublist-title text-grey"><span class="column-hidden">Стоимость (шт.)</span><span class="row-hidden">Цена (шт.)</span></div>
+                <div class="flex-gap-10">
+                  <div class="store-prevprice">1000р</div>
+                  <div class="store-price font-semibold">750₽</div>
+                <div>
+              </li>
+              <li class="store-sublist-item justify-between"> 
+                <div class="store-sublist-title text-grey">от 25 000₽</div>
+                <div class="flex-gap-10">
+                  <div class="store-prevprice">800р</div>
+                  <div class="store-price font-semibold">590₽</div>
+                <div>
+              </li>
+              <li class="store-sublist-item justify-between">
+                <div class="store-sublist-title text-grey">от 100 000₽</div>
+                <div class="flex-gap-10">
+                  <div class="store-prevprice">500р</div>
+                  <div class="store-price font-semibold">350₽</div>
+                <div>
+              </li>
+            </ul>
+      
+            <div class="store-buttons-wrapper">
+              <form action="#" class="store-buttons">
+                <button type="button" data-modal="#addProduct" class="store-button page-button"><svg>
+                    <use href='#cartIcon2'></use>
+                  </svg>в корзину</button>
+                <button type="submit" class="store-favor page-button-white"><svg>
+                    <use href='#favoriteIcon'></use>
+                  </svg></button>
+              </form>
+  
+              <form action="#" class="store-count">
+                <div class="store-count-wrapper">
+                  <button class="page-button-white store-count-btn minus h5" type="button">-</button>
+                  <input name="count" class="store-count-input" value="1" autocomplete="off">
+                  <button class="page-button-white store-count-btn plus h5" type="button">+</button>
+                </div>
+  
+                <div class="store-count-number h3 text-blue">7619.34 ₽</div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        }
+
+      </div>
+    </div>
+  </div>
+</section>

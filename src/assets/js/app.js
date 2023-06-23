@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const header = document.querySelector('header');
 
+
   class Menu {
     constructor(menuElement, buttonElement) {
       this.menu = typeof menuElement === "string" ? document.querySelector(menuElement) : menuElement;
@@ -340,9 +341,11 @@ document.addEventListener("DOMContentLoaded", () => {
             new Swiper(swiper, {
               slidesPerView: 'auto',
               loop: numberOfSlides.length > 3,
-              slidesPerGroup: 1,
               slidesPerGroupAuto: false,
-              speed: 500,
+              speed: 400,
+              autoplay: {
+                delay: 5000,
+              },
               grabCursor: true,
               pagination: {
                 el: swiperPagination,
@@ -357,35 +360,88 @@ document.addEventListener("DOMContentLoaded", () => {
                   return s.substr(s.length - 2);
                 }
               },
-              breakpoints: {
-                // when window width is >= 1025px
-                1025: {
-                  slidesPerGroup: 3,
-                  slidesPerGroupAuto: true,
-                  speed: 700,
-                },
-              },
               navigation: {
                 nextEl: next,
                 prevEl: prev,
               },
-              on: {
-                transitionStart: function (swiper) {
-
-                  if (!xl.matches) {
-                    swiper.el.classList.add('transition');
-                  }
-                },
-                transitionEnd: function (swiper) {
-                  if (!xl.matches) {
-                    swiper.el.classList.remove('transition');
-                  }
-                },
-              }
             })
           }, 0)
 
         }
+      }
+    })
+  }
+
+  const podcategory = document.querySelectorAll('.podcategory-swiper');
+
+  if (podcategory.length) {
+
+    podcategory.forEach(el => {
+      const next = el.parentElement.querySelector('.next');
+      const prev = el.parentElement.querySelector('.prev');
+
+      const swiperWidth = el.getBoundingClientRect().width;
+      const slides = el.querySelectorAll('.swiper-slide');
+      let slidesWidth = 0;
+      if (slides.length) {
+        slides.forEach(slide => {
+          slidesWidth += slide.getBoundingClientRect().width;
+        })
+      }
+      if (slidesWidth > swiperWidth && !xl.matches) {
+        el.parentElement.classList.add('active-swiper');
+        new Swiper(el, {
+          slidesPerView: 'auto',
+          grabCursor: true,
+          navigation: { 
+            nextEl: next,
+            prevEl: prev,
+          },
+          on: {
+            resize: function () {
+              el.parentElement.classList.add('active-swiper');
+            }
+          }
+        })
+      } else {
+        el.parentElement.classList.add('not-active-swiper');
+      }
+
+
+    })
+  }
+
+  const productSwipers = document.querySelectorAll('.product-swipers');
+
+  if (productSwipers.length) {
+    productSwipers.forEach(wrapper => {
+      const mainSwiper = wrapper.querySelector('.product-swiper');
+      const tumbsSwiper = wrapper.querySelector('.tumbs-swiper');
+      const tumbsSlides = tumbsSwiper.querySelectorAll('.swiper-slide');
+      const prev = mainSwiper.parentElement.querySelector('.prev');
+      const next = mainSwiper.parentElement.querySelector('.next');
+      if (mainSwiper && tumbsSwiper) {
+        const tumb = new Swiper(tumbsSwiper, {
+          loop: tumbsSlides.length > 3,
+          slidesPerView: 'auto',
+          slideToClickedSlide: true,
+          loopedSlides: 4,
+          grabCursor: true,
+        })
+        const swiper = new Swiper(mainSwiper, {
+          loop: tumbsSlides.length > 3,
+          slidesPerView: 1,
+          grabCursor: true,
+          loopedSlides: 4,
+          navigation: {
+            nextEl: next,
+            prevEl: prev,
+          },
+        })
+
+
+        swiper.controller.control = tumb;
+        tumb.controller.control = swiper;
       }
     })
   }
@@ -397,10 +453,10 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         "particles": {
           "number": {
-            "value": 50,
+            "value": xl.matches ? 30 : 50,
             "density": {
               "enable": true,
-              "value_area": 800
+              "value_area": xl.matches ? 500 : 800
             }
           },
           "color": {
@@ -706,16 +762,436 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const buttonsModal = document.querySelectorAll('[data-modal]');
 
   function hideaftertransition() {
     this.hidden = true
     this.removeEventListener('transitionend', hideaftertransition);
   }
 
-  if (buttonsModal.length) {
-    buttonsModal.forEach(el => el.addEventListener('click', modalHandler));
+  document.addEventListener('click', () => {
+    const dataModal = event.target.closest('[data-modal]');
+    if (dataModal) {
+      modalHandler.apply(dataModal);
+      return;
+    }
+
+    const err = event.target.closest('.error');
+
+    if (err) {
+      const errors = document.querySelectorAll('.error');
+      if (errors.length)
+      errors.forEach(el=>el.classList.remove('error'));
+    }
+  })
+
+  function inputNumbersHandler(el) {
+    const inputNumbers = el.querySelector('.store-count-input');
+    const regEx = new RegExp('[0-9]+', 'g');
+    const plus = el.querySelector('.plus');
+    const minus = el.querySelector('.minus');
+
+    if (inputNumbers) {
+      inputNumbers.addEventListener('keypress', (event) => {
+        if (event.keyCode == 46 || event.keyCode == 8) {
+          //do nothing
+        }
+        else {
+          if (event.keyCode < 48 || event.keyCode > 57) {
+            event.preventDefault();
+          }
+        }
+      })
+      inputNumbers.addEventListener('input', function () {
+        const value = this.value;
+        if (!regEx.test(value)) {
+          this.value = '';
+        };
+      })
+      inputNumbers.addEventListener('blur', function () {
+        if (this.value.trim() === '') {
+          this.value = 1;
+        }
+      })
+    }
+
+    if (plus) {
+      plus.addEventListener('click', () => {
+        inputNumbers.value++;
+      })
+    }
+
+    if (minus) {
+      minus.addEventListener('click', () => {
+        inputNumbers.value--;
+        if (inputNumbers.value < 1) {
+          inputNumbers.value = 1;
+        }
+      })
+    }
   }
+  setTimeout(() => {
+    const storeCount = document.querySelectorAll('.store-count-wrapper');
+
+    if (storeCount.length) {
+      storeCount.forEach(el => {
+        inputNumbersHandler(el);
+      })
+    }
+
+    const addButtons = document.querySelectorAll('[data-modal="#addProduct"]');
+    const addProductContent = document.getElementById('addProduct-content');
+
+    if (addButtons.length && addProductContent) {
+      addButtons.forEach(el => {
+        el.addEventListener('click', function () {
+          const parent = this.closest('.store-item');
+          if (parent) {
+            const clone = parent.cloneNode(true);
+            addProductContent.innerHTML = '';
+            addProductContent.appendChild(clone);
+            inputNumbersHandler(addProductContent);
+          }
+        })
+      })
+    }
+  }, 0)
+
+  const catalogMaxHeight = document.querySelectorAll('.catalog2-max-h');
+
+  if (catalogMaxHeight.length) {
+    const style = getComputedStyle(document.body);
+    const numb = style.getPropertyValue('--lineNumb') || 5;
+    catalogMaxHeight.forEach(el => {
+
+      if (el.children.length > numb) {
+        el.nextElementSibling.classList.add('visible');
+      }
+    })
+  }
+
+  const accordions = document.querySelectorAll('.accordion');
+
+  if (accordions.length) {
+    accordions.forEach(el => {
+      const btn = el.querySelector('.accordion-button');
+
+      if (btn) {
+        btn.addEventListener('click', function () {
+          this.classList.toggle('active');
+        })
+      }
+    })
+  }
+
+  setTimeout(() => {
+    const ranges = document.querySelectorAll('.slider-range')
+    if (ranges.length) {
+      ranges.forEach(el => {
+        let valueInput = [];
+        const min = el.parentElement.querySelector('.min');
+        const max = el.parentElement.querySelector('.max');
+
+        const range = new rSlider({
+          target: el,
+          values: { min: +el.dataset.min || 0, max: +el.dataset.max || 100 },
+          step: +el.dataset.step || 10,
+          range: true,
+          set: [+el.dataset.set1 || 0, +el.dataset.set2 || 100],
+          scale: false,
+          labels: true,
+          tooltip: false,
+          onChange: (value) => {
+            valueInput = value.split(',');
+            if (min) {
+              min.value = valueInput[0] + '.00';
+            }
+            if (max) {
+              max.value = valueInput[1] + '.00';
+            }
+          }
+        });
+
+        const inputs = el.parentElement.querySelectorAll('input');
+        const maxValue = range.conf.values[range.conf.values.length - 1] + '.00';
+        const minValue = range.conf.values[0] + '.00';
+
+        if (inputs.length) {
+          inputs.forEach(el => {
+            const regEx = new RegExp('[0-9]+', 'g');
+            el.addEventListener('keypress', (event) => {
+              if (event.keyCode == 46 || event.keyCode == 8) {
+                //do nothing
+              }
+              else {
+                if (event.keyCode < 48 || event.keyCode > 57) {
+                  event.preventDefault();
+                }
+              }
+            })
+            el.addEventListener('input', function () {
+              const value = this.value;
+              if (!regEx.test(value)) {
+                this.value = '';
+              }
+            })
+            el.addEventListener('blur', function () {
+              if (this.value.trim() === '') {
+                if (this.classList.contains('min')) {
+                  this.value = minValue;
+                }
+                if (this.classList.contains('max')) {
+                  this.value = maxValue;
+                }
+              } else {
+                const values = range.getValue().split(',');
+                if (this.classList.contains('min')) {
+                  range.setValues(+this.value, +values[1]);
+                }
+                if (this.classList.contains('max')) {
+                  range.setValues(+values[0], +this.value);
+                }
+              }
+            })
+          })
+        }
+
+      })
+    }
+  }, 0);
+
+  var x, i, j, l, ll, selElmnt, a, b, c;
+  /* Look for any elements with the class "custom-select": */
+  x = document.getElementsByClassName("custom-select");
+  l = x.length;
+  for (i = 0; i < l; i++) {
+    selElmnt = x[i].getElementsByTagName("select")[0];
+    ll = selElmnt.length;
+    /* For each element, create a new DIV that will act as the selected item: */
+    a = document.createElement("DIV");
+    a.setAttribute("class", "select-selected");
+    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    x[i].appendChild(a);
+    /* For each element, create a new DIV that will contain the option list: */
+    b = document.createElement("DIV");
+    b.setAttribute("class", "select-items select-hide");
+    for (j = 1; j < ll; j++) {
+      /* For each option in the original select element,
+      create a new DIV that will act as an option item: */
+      c = document.createElement("DIV");
+      c.innerHTML = selElmnt.options[j].innerHTML;
+      c.addEventListener("click", function (e) {
+        /* When an item is clicked, update the original select box,
+        and the selected item: */
+        var y, i, k, s, h, sl, yl, sel;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        sel = this.parentNode.previousSibling.classList.add('select-selected--active')
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+      });
+      b.appendChild(c);
+    }
+    x[i].appendChild(b);
+    a.addEventListener("click", function (e) {
+      /* When the select box is clicked, close any other select boxes,
+      and open/close the current select box: */
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+  }
+
+  function closeAllSelect(elmnt) {
+    /* A function that will close all select boxes in the document,
+    except the current select box: */
+    var x, y, i, xl, yl, arrNo = [];
+    x = document.getElementsByClassName("select-items");
+    y = document.getElementsByClassName("select-selected");
+    xl = x.length;
+    yl = y.length;
+    for (i = 0; i < yl; i++) {
+      if (elmnt == y[i]) {
+        arrNo.push(i)
+      } else {
+        y[i].classList.remove("select-arrow-active");
+      }
+    }
+    for (i = 0; i < xl; i++) {
+      if (arrNo.indexOf(i)) {
+        x[i].classList.add("select-hide");
+      }
+    }
+  }
+
+  /* If the user clicks anywhere outside the select box,
+  then close all select boxes: */
+  document.addEventListener("click", closeAllSelect);
+
+  const viewButtons = document.querySelectorAll('.view-button');
+  const catalog2Content = document.querySelector('.catalog2-content');
+
+  if (viewButtons.length) {
+    viewButtons.forEach(el => {
+      el.addEventListener('click', function () {
+        viewButtons.forEach(btn => {
+          btn.classList.remove('active');
+        })
+        this.classList.add('active');
+        if (this.classList.contains('--hor')) {
+          catalog2Content.classList.add('--horizontal');
+        } else {
+          catalog2Content.classList.remove('--horizontal');
+        }
+      })
+
+      if (el.classList.contains('active')) {
+        el.click();
+      }
+    })
+  }
+
+  const filterBtn = document.querySelector('.filter-button');
+  const filterClose = document.querySelector('.filter-close');
+
+  if (filterBtn && filterClose) {
+    filterBtn.addEventListener('click', function () {
+      this.classList.toggle('active');
+    })
+
+    filterClose.addEventListener('click', () => filterBtn.click());
+  }
+
+  const favoriteItems = document.querySelectorAll('.favorite-list input[type="checkbox"], .cart-list input[type="checkbox"]');
+
+  if (favoriteItems.length) { 
+    favoriteItems.forEach(el => {
+      el.addEventListener('click', function () {
+        const parent = this.closest('.store-item');
+        if (parent) {
+          if (this.checked) {
+            parent.classList.add('active');
+          } else {
+            parent.classList.remove('active');
+          }
+        }
+      })
+      if (el.checked) { 
+        const parent = el.closest('.store-item');
+        if (parent) {
+          parent.classList.add('active');
+        }
+      }
+    })
+  }
+
+  const orderSelects = document.querySelectorAll('.order-select-wrapper');
+
+  function closeSelect () {
+    if (!event.target.closest('.order-select')) {
+      if (orderSelects.length) {
+        orderSelects.forEach(container=> {
+          const btn = container.querySelector('.order-select-name');
+          if (btn) {
+            btn.classList.remove('open');
+          }
+        })
+      }
+      document.removeEventListener('click', closeSelect);
+    }
+  }
+
+  function closeSelects () {
+    if (orderSelects.length) {
+      orderSelects.forEach(container=> {
+        const btn = container.querySelector('.order-select-name');
+        if (btn) {
+          btn.classList.remove('open');
+        }
+      })
+    }
+    document.removeEventListener('click', closeSelect);
+  }
+
+  if (orderSelects.length) {
+    orderSelects.forEach(container => {
+      const btn = container.querySelector('.order-select-name');
+      const options = container.querySelectorAll('.order-select-btn');
+      const content = container.querySelector('.order-content');
+
+      if (options.length) {
+        options.forEach(option => {
+          option.addEventListener('click', function () {
+            options.forEach(option1 => {
+              option1.classList.remove('selected');
+            })
+            this.classList.add('selected');
+            btn.innerHTML = this.innerHTML;
+            if (content) {
+              content.innerHTML = this.nextElementSibling?.innerHTML || '';
+            }
+            closeSelects();
+          })
+
+          if (option.classList.contains('selected')) {
+            options.forEach(option1 => {
+              option1.classList.remove('selected');
+            })
+            btn.innerHTML = option.innerHTML;
+            if (content) {
+              content.innerHTML = option.nextElementSibling?.innerHTML || '';
+            }
+          }
+        })
+      }
+
+      if (btn) {
+        btn.addEventListener('click', function () {
+          this.classList.toggle('open');
+
+          if (this.classList.contains('open')) {
+            document.addEventListener('click', closeSelect);
+          }
+        })
+      }
+    })
+  }
+
+  const scrolledObj = document.querySelectorAll('[data-scroll]');
+
+  if (scrolledObj.length) {
+    scrolledObj.forEach(el => {
+      el.addEventListener('click', function () {
+        const sc = document.getElementById(this.dataset.scroll);
+        if (sc) {
+          // sc.scrollIntoView({block: "center", behavior: "smooth"}); 
+          const header = document.querySelector('header');
+          let headerH = null;
+          if (header) {
+            headerH = header.getBoundingClientRect().height;
+          }
+          const yOffset = headerH ? -headerH : -200;
+          const y = sc.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+          window.scrollTo({ top: y, behavior: 'auto' });
+        }
+      })
+    })
+  }
+
 
 });
 

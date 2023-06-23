@@ -10,7 +10,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: calc(100vw / 1920 * 10);
+  font-size: calc(100vw / 1930 * 10);
   // @include breakpoint($cos-bp) {
   //   font-size: calc(100vw / 1440 * 10);
   // }
@@ -22,10 +22,25 @@ html {
   @include breakpoint($sm-bp) {
     font-size: calc(100vw / 375 * 10);
   }
+  
 }
 
 ::-webkit-scrollbar {
-  width: 0;
+  width: 1rem;
+  height: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0.8rem;
+  background-color: var(--white);
+
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.8rem;
+  border: 0.3rem solid transparent;
+  background-clip: content-box;
+  background-color: var(--blue);
 }
 
 *,
@@ -44,6 +59,8 @@ body {
   @include breakpoint($sm-bp) {
     font-size: 1.3rem;
   }
+
+
 }
 
 img {
@@ -59,6 +76,7 @@ svg {
 
 @import './blocks/swiper.scss';
 @import './blocks/general.scss';
+@import './vendor/rslider.scss';
 
 .img-contain {
   display: block;
@@ -91,11 +109,19 @@ svg {
     padding-left: 0;
     padding-right: 0;
   }
+
+  .px-20 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
 }
 
 .container2 {
   padding-right: 12rem;
   padding-left: 12rem;
+
+
 }
 
 .container,
@@ -120,7 +146,13 @@ svg {
 @import './blocks/modal.scss';
 @import './blocks/actions.scss';
 @import './blocks/about.scss';
-
+@import './blocks/howtoorder.scss';
+@import './blocks/contacts.scss';
+@import './blocks/item.scss';
+@import './blocks/catalog2.scss';
+@import './blocks/product.scss';
+@import './blocks/favorite.scss';
+@import './blocks/cart.scss';
 
 
 

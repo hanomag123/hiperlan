@@ -44,7 +44,8 @@
 
   color: var(--black);
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  overflow: hidden;
   span {
     transition: color .3s;
     will-change: color;
@@ -454,7 +455,7 @@
 .callback-button {
   color: var(--white);
   padding: 1.2rem 2.6rem;
-  border: 0.2rem solid var(--white);
+  border: 0.25rem solid var(--white);
   border-radius: 1rem;
   transition: background-color .3s, color .3s;
   &:hover {
@@ -528,6 +529,14 @@
   border-radius: 1rem;
   padding: 0.4rem 1.5rem;
   transition: background-color .3s, transform .3s;
+  &.swiper-button-disabled {
+    &:hover {
+      background-color: var(--white);
+      svg {
+        fill: var(--grey);
+      }
+    }
+  }
   @media (hover: hover) and (pointer:fine) {
     &:hover {
       background-color: var(--blue);
@@ -535,17 +544,18 @@
         fill: var(--white);
       }
     }
-    &:active {
-      background-color: var(--blue);
-      &.next {
-        transform: translate3d(0.5rem, 0, 0);
-      }
-      &.prev {
-        transform: translate3d(-0.5rem, 0, 0);
-      }
-      svg {
-        fill: var(--white);
-      }
+
+  }
+  &:active {
+    background-color: var(--blue);
+    &.next {
+      transform: translate3d(0.5rem, 0, 0);
+    }
+    &.prev {
+      transform: translate3d(-0.5rem, 0, 0);
+    }
+    svg {
+      fill: var(--white);
     }
   }
 }
@@ -558,86 +568,6 @@
   @include breakpoint($xl-bp) {
     flex-direction: column;
     align-items: flex-start;
-  }
-}
-
-.justify-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.transition {
-  .store-item {
-    @media (hover:hover) and (pointer:fine) {
-      &:hover {
-        .store-img {
-          height: 33.3rem;
-          @include breakpoint($sm-bp) {
-            height: 20.3rem;
-          }
-        }
-        .store-buttons-wrapper {
-          grid-template-rows: 0fr;
-        }
-
-      }
-    }
-  }
-}
-.store-item {
-  box-shadow: 0px 0px 2rem rgba(26, 29, 30, 0.1);
-  border-radius: 1rem;
-  background-color: var(--white);
-  padding: 2rem;
-  &:hover {
-    .store-img {
-      height: 26rem;
-      @include breakpoint($sm-bp) {
-        height: 20.3rem;
-      }
-    }
-    .store-buttons-wrapper {
-      grid-template-rows: 1fr;
-    }
-    .store-text-2 {
-      color: var(--blue);
-    }
-  }
-}
-
-.font-semibold {
-  font-weight: 600;
-}
-
-.store-label {
-  border-radius: 0.4rem;
-
-  font-family: 'Exo 2';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-
-  color: var(--white);
-
-  background-color: #8BC444;
-  padding: 0.3rem 0.8rem;
-  display: inline-block;
-  &.--orange {
-    background-color: #FBC02F;
-  }
-  &.--red {
-    background-color: var(--red);
-  }
-}
-
-.store-img {
-  height: 33.3rem;
-  transition: height .3s;
-  @include breakpoint($sm-bp) {
-    height: 20.3rem;
   }
 }
 
@@ -659,87 +589,17 @@
   }
 }
 
-.store-text-2 {
-  margin-top: 0.5rem;
-  display: block;
-}
-
-.store-text-3 {
-  letter-spacing: -0.001em;
-}
-
-.store-sublist {
+.justify-between {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.store-buttons-wrapper {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows .3s;
-  @include breakpoint($xl-bp) {
-    grid-template-rows: 1fr;
-  }
-}
-.store-buttons {
-  display: grid;
-  grid-template-columns: 1fr max-content;
-  gap: 1rem;
-  overflow: hidden;
-  @include breakpoint($xl-bp) {
-    overflow: unset;
-  }
-}
-
-.store-button {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  svg {
-    width: 2rem;
-    height: 2rem;
-    stroke-width: 2;
-    fill: transparent;
-    stroke: var(--white);
-  }
 }
 
-.store-favor {
-  width: 5.2rem;
-  height: 5.2rem;
-  padding: 1rem;
-  margin-top: 2rem;
-  @include breakpoint($sm-bp) {
-    padding: 0.7rem;
-    height: 4.8rem;
-  }
-  &.active {
-    background-color: var(--blue);
-    svg {
-      fill: var(--white);
-      stroke: var(--white);
-    }
-  }
-  svg {
-    fill: transparent;
-    stroke: var(--blue);
-    stroke-width: 2;
-  }
-}
-
-.store-prevprice {
-  font-family: 'Montserrat';
-  font-style: normal;
+.font-semibold {
   font-weight: 600;
-  font-size: 1.2rem;
-  line-height: 140%;
-  text-decoration-line: line-through;
-  @include breakpoint($sm-bp) {
-    font-size: 0.8rem;
-  }
 }
+
+
 
 .flex-gap-10 {
   display: flex;
@@ -796,8 +656,10 @@
     gap: 1.5rem;
   }
   li.page-block {
+    outline: 0.25rem solid transparent;
+    transition: outline-color .3s;
     &:hover {
-      box-shadow: 0px 0px 2rem rgba(26, 29, 30, 0.2);
+      outline: 0.25rem solid var(--blue);
     }
     a {
       padding: 3rem 4.5rem;
@@ -843,5 +705,46 @@
   gap: 4rem;
   @include breakpoint($sm-bp) {
     align-items: flex-start;
+  }
+}
+
+.p404 {
+  display: grid;
+  grid-template-columns: 56rem 1fr;
+  gap: 14.9rem;
+  margin-top: 14rem;
+  margin-bottom: 25.8rem;
+  align-items: center;
+  @include breakpoint($xl-bp) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 4rem;
+
+  }
+}
+
+.p404-l {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  @include breakpoint($xl-bp) {
+    align-items: center;
+  }
+}
+
+.p404-btn {
+  margin-top: 2rem;
+  max-width: 38rem;
+  display: inline-block;
+  @include breakpoint($xl-bp) {
+    width: 100%;
+  }
+}
+
+.p404-img {
+  height: 34rem;
+  width: 100%;
+  @include breakpoint($xl-bp) {
+    height: 12rem;
   }
 }

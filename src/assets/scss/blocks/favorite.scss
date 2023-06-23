@@ -1,0 +1,53 @@
+.favorite-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.min-w-300 {
+  width: 30rem;
+}
+
+.min-w-420 {
+  width: 42rem;
+}
+
+.favorite-buttons {
+  display: flex;
+  gap: 2rem;
+  &.top {
+    @include breakpoint($xl-bp) {
+      display: none;
+    }
+  }
+
+  &.bot {
+    display: none;
+    @include breakpoint($xl-bp) {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      & > * {
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+.favorite-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 0.1rem solid var(--lgrey);
+  @include breakpoint($xl-bp) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  @include breakpoint($sm-bp) {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 2rem;
+  }
+}

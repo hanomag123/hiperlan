@@ -20,6 +20,9 @@
     overflow: auto;
     z-index: 10;
     gap: 3rem;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
   }
 
   .header-nav {

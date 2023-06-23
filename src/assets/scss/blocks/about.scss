@@ -7,14 +7,10 @@
 }
 
 .about-block {
-  padding: 4rem;
   margin-top: 4rem;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   break-inside: avoid;
-  @include breakpoint($xl-bp) {
-    padding: 2rem;
-  }
   &:first-child {
     margin-top: 0;
   }

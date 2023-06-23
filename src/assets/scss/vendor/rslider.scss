@@ -1,0 +1,108 @@
+.rs-container * {
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.rs-container {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 2.4rem;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: calc(100% - 1.6rem);
+}
+
+.rs-container .rs-bg,
+.rs-container .rs-selected {
+  background-color: var(--lgrey);
+  height: 0.4rem;
+  left: 0;
+  position: absolute;
+  top: 1rem;
+  width: 100%;
+  border-radius: 3px
+}
+
+.rs-container .rs-selected {
+  background-color: var(--blue);
+  transition: all .2s linear;
+  width: 0;
+}
+
+.rs-container.disabled .rs-selected {
+  background-color: #ccc;
+  border-color: #bbb
+}
+
+.rs-container .rs-pointer {
+  background-color: var(--white);
+  border: 0.4rem solid var(--blue);
+  border-radius: 100%;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: all .2s linear;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.rs-container.disabled .rs-pointer {
+  border-color: #ccc;
+  cursor: default
+}
+
+.rs-pointer[data-dir="right"] {
+  transform: translateX(-8px);
+}
+
+.rs-container .rs-pointer::after {
+  left: auto;
+  right: 12px
+}
+
+.rs-container.sliding .rs-pointer,
+.rs-container.sliding .rs-selected {
+  transition: none
+}
+
+.rs-container .rs-scale {
+  left: 0;
+  position: absolute;
+  top: 5px;
+  white-space: nowrap
+}
+
+.rs-container .rs-scale span {
+  float: left;
+  position: relative
+}
+
+.rs-container .rs-scale span::before {
+  background-color: #ededed;
+  content: "";
+  height: 8px;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 1px
+}
+
+.rs-container.rs-noscale span::before {
+  display: none
+}
+
+
+.rs-container .rs-scale span ins {
+  display: block;
+  opacity: 0;
+}
+
+.rs-tooltip {
+  display: none;
+}
