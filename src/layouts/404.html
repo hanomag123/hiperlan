@@ -1,53 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru" class="font-opacity">
-  <head>
-    {{> head }}
-  </head>
 
-  <body>
-    {{> sprite }}
+<head>
+  {{> head }}
 
-    <div class="page">
-      <!-- Header -->
+  
+  <script>
+    if (document && document.fonts) {
+      setTimeout(function () {
+        document.fonts.ready.then(function () {
+          document.documentElement.classList.remove("font-opacity");
+        });
+      }, 0);
+    } else {
+      document.documentElement.classList.remove("font-opacity");
+    }
+  </script>
+</head>
 
-      {{> header }}
+<body>
+  {{> sprite }}
 
-      <!-- Main content -->
-      <main>
-        
-        {{> body }}
+  <div class="page">
+    <!-- Header -->
 
-      </main>
+    {{> header }}
 
-    </div>
+    <!-- Main content -->
+    <main>
 
-    <!-- Consult modal -->
-    {{> consult-modal}}
+      {{> body }}
 
-    <!-- Product in cart modal -->
-    {{> addProduct}}
+    </main>
 
-    <!-- Feedback modal -->
-    {{> feedback}}
+  </div>
 
-    <!-- Details modal -->
-    {{> detailsModal}} 
+  <!-- Consult modal -->
+  {{> consult-modal}}
+
+  <!-- Product in cart modal -->
+  {{> addProduct}}
+
+  <!-- Feedback modal -->
+  {{> feedback}}
+
+  <!-- Details modal -->
+  {{> detailsModal}}
 
 
-    <!-- JS -->
-    <script>
-      if (document && document.fonts) {
-        setTimeout(function () {
-          document.fonts.ready.then(function () {
-            document.documentElement.classList.remove("font-opacity");
-          });
-        }, 0);
-      } else {
-        document.documentElement.classList.remove("font-opacity");
-      }
-    </script>
-    <script src="assets/js/vendor.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/temp.js"></script>
-  </body>
+  <!-- JS -->
+
+  <script src="assets/js/vendor.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/temp.js"></script>
+</body>
+
 </html>

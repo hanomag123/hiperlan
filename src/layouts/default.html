@@ -2,6 +2,18 @@
 <html lang="ru" class="font-opacity">
   <head>
     {{> head }}
+
+    <script>
+      if (document && document.fonts) {
+        setTimeout(function () {
+          document.fonts.ready.then(function () {
+            document.documentElement.classList.remove("font-opacity");
+          });
+        }, 0);
+      } else {
+        document.documentElement.classList.remove("font-opacity");
+      }
+    </script>
   </head>
 
   <body>
@@ -37,17 +49,7 @@
 
 
     <!-- JS -->
-    <script>
-      if (document && document.fonts) {
-        setTimeout(function () {
-          document.fonts.ready.then(function () {
-            document.documentElement.classList.remove("font-opacity");
-          });
-        }, 0);
-      } else {
-        document.documentElement.classList.remove("font-opacity");
-      }
-    </script>
+
     <script src="assets/js/vendor.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/temp.js"></script>

@@ -71,10 +71,22 @@
 .favorite-list,
 .cart-list {
   .store-item {
-    transition: outline-color .3s;
-    outline: 0.25rem solid transparent;
+    position: relative;
     &.active {
-      outline: 0.25rem solid var(--blue);
+      &::before {
+        border-color:  var(--blue);
+      }
+    }
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      top: 0;
+      left: 0;
+      position: absolute;
+      border: 0.25rem solid transparent;
+      transition: border-color .3s;
     }
 
 
@@ -267,9 +279,9 @@
       @include breakpoint($sm-bp) {
       //styleName: h5 mob;
       font-family: "Montserrat";
-      font-size: 1.3px;
+      font-size: 1.3rem;
       font-weight: 600;
-      line-height: 1.6px;
+      line-height: 1.6rem;
       letter-spacing: 0em;
       text-align: left;
   

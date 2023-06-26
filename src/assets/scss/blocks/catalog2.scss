@@ -349,7 +349,8 @@
   width: 4rem;
   height: 4rem;
   border: 0.25rem solid transparent;
-  transition: outline-color .3s;
+  transition: border-color .3s;
+
   svg {
     fill: var(--grey);
   }
@@ -358,7 +359,6 @@
     svg {
       fill: var(--blue);
     }
-    outline-color: var(--blue);
   }
 }
 
